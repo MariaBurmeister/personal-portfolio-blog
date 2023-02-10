@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { Fetcher } from "swr";
 
-interface Project {
+interface ProjectData {
   id: number;
   name: string;
   full_name: string;
@@ -10,9 +10,19 @@ interface Project {
   language: string;
 }
 
-export type ProjectsData = Project[];
+interface Project {
+  id: number;
+  name: string;
+  description: string | null;
+  url: string;
+  language: string;
+}
 
-export const fetcher: Fetcher<ProjectsData> = (url: string) =>
+type ProjectsData = ProjectData[];
+
+export type Projects = Project[];
+
+export const fetcher: Fetcher<Projects> = (url: string) =>
   fetch(url).then((res) => res.json());
 
 export default function getProjects(
@@ -20,16 +30,34 @@ export default function getProjects(
   res: NextApiResponse<ProjectsData>
 ) {
   const username = process.env.GITHUB_USERNAME;
-  const url = `https://api.github.com/users/${username}/repos`;
+  const bearer = process.env.GITHUB_TOKEN;
+  const url = `https://api.github.com/users/${username}/repos?sort=created&direction=desc`;
   return fetch(url, {
-    headers: { Accept: "application/vnd.github+json" },
+    headers: {
+      Accept: "application/vnd.github+json",
+      Authorization: `Bearer ${bearer}`,
+    },
   })
-    .then((data) => data.json())
     .then((data) => {
-      res.status(200).json(data);
+      if (data.status === 200) {
+        return data.json();
+      }
+      res.status(data.status || 500).end(data.statusText);
     })
-    .catch((error) => {
-      console.error(error);
-      res.status(500);
+    .then((data) => {
+      const projects = data.map(
+        ({ id, name, description, html_url, language }: ProjectData) => ({
+          id,
+          name,
+          description: description ?? null,
+          url: html_url,
+          language: language,
+        })
+      );
+      res.status(200).json(projects);
+    })
+    .catch(({ message, status }) => {
+      console.error(message, status);
+      res.status(status || 500).end(message);
     });
 }

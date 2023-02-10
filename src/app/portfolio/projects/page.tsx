@@ -15,14 +15,14 @@ const Projects: FunctionComponent = () => {
       )}
       {error && <p>Error: {error.message + error.cause}</p>}
       {data &&
-        data.map(({ id, name, description, html_url, language }) => (
+        data.map(({ id, name, description, url, language }) => (
           <Project
             key={id}
             id={id}
             name={name}
             description={description}
-            html_url={html_url}
-            languages={[language]}
+            url={url}
+            language={language}
           />
         ))}
       {/* {mockProjects.map(({ id, name, description, html_url, language }) => (
@@ -31,7 +31,7 @@ const Projects: FunctionComponent = () => {
           name={name}
           description={description}
           html_url={html_url}
-          languages={[language]}
+          language={[language]}
         />
       ))} */}
     </ul>

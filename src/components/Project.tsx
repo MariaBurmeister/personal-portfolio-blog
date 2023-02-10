@@ -5,30 +5,29 @@ import { BsGithub as GitHub } from "react-icons/bs";
 interface Project {
   id: number;
   name: string;
-  //   full_name: string;
-  description: string;
-  html_url: string;
-  languages: string[];
+  description: string | null;
+  url: string;
+  language: string;
 }
 
 export const Project: FunctionComponent<Project> = ({
   name,
   description,
-  html_url,
-  languages,
+  url,
+  language,
 }) => {
   const [expanded, setExpanded] = useState(false);
   return (
     <Card
       title={name}
-      titleHelp={languages.join(", ")}
+      titleHelp={language}
       label={name}
-      footer={<ProjectActions gitHubLink={html_url} />}
+      footer={<ProjectActions gitHubLink={url} />}
       styleContent="relative  min-h-[4.5rem] "
       styleFooter="flex justify-between items-center pr-2 pt-1"
     >
       <p className={`line-clamp-2 ${expanded ? "line-clamp-none" : ""}`}>
-        {description}
+        {description ?? name}
       </p>
       <button
         id="expand"

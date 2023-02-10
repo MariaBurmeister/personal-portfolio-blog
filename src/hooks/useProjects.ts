@@ -1,5 +1,6 @@
 "use client";
 import useSWR from "swr";
+import { Projects, fetcher } from "@/pages/api/projects";
 import { useEffect, useState } from "react";
 
 const projects = [
