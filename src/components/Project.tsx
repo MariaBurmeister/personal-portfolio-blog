@@ -23,7 +23,7 @@ export const Project: FunctionComponent<Project> = ({
       titleHelp={language}
       label={name}
       footer={<ProjectActions gitHubLink={url} />}
-      styleContent="relative  min-h-[4.5rem] "
+      styleContent="relative flex flex-col justify-between min-h-[4.5rem] "
       styleFooter="flex justify-between items-center pr-2 pt-1"
     >
       <p className={`line-clamp-2 ${expanded ? "line-clamp-none" : ""}`}>
@@ -36,7 +36,7 @@ export const Project: FunctionComponent<Project> = ({
       />
       <label
         htmlFor="expand"
-        className="mt-auto text-xs text-purple-400 underline peer-hover:text-purple-600"
+        className="text-xs text-purple-400 underline peer-hover:text-purple-600"
       >
         {expanded ? "show less" : "show more"}
       </label>
