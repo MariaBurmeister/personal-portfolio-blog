@@ -25,9 +25,9 @@ const RootLayout: FunctionComponent<Layout> = ({ children }) => {
           rel="stylesheet"
         />
       </head>
-      <body className="relative grid min-h-[100dvh] grid-cols-1 grid-rows-6 bg-gradient-to-r from-green-200 to-purple-500 p-6 md:px-16 md:pt-16 lg:px-36">
+      <body className="relative flex min-h-[100dvh] flex-col gap-8 bg-gradient-to-r from-green-200 to-purple-500 p-6 md:justify-center  md:px-16 lg:px-36">
         {children}
-        <footer className="sticky bottom-1 col-span-1 row-span-6 grow self-center rounded-xl bg-white py-0 px-2 shadow-2xl ring-white ring-offset-4 ring-offset-slate-300">
+        <footer className="sticky bottom-1 shrink rounded-xl bg-white px-2 shadow-2xl">
           <MainNav />
         </footer>
       </body>

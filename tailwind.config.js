@@ -8,5 +8,5 @@ module.exports = {
       plaster: ["Plaster", "cursive"],
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/line-clamp")],
 };

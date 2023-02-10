@@ -1,4 +1,7 @@
 import { FunctionComponent } from "react";
+import Image from "next/image";
+import GABI from "../../public/GABI.png";
+
 import {
   BsFillGeoAltFill as Location,
   BsGithub as GitHub,
@@ -27,8 +30,8 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
       `}
     >
       <header>
-        <img
-          src="./GABI.png"
+        <Image
+          src={GABI}
           alt="professional-headshot of Maria Burmeister"
           className="mr-auto h-32 w-32 rounded-full object-cover object-right-top ring-2 ring-purple-900 ring-offset-4 md:mx-auto "
         />

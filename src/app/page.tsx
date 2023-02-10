@@ -2,7 +2,7 @@ import { FunctionComponent } from "react";
 
 const Home: FunctionComponent = () => {
   return (
-    <main className="] absolute bottom-[60dvh] flex w-full justify-center">
+    <main className="bottom-[60dvh] my-auto self-center md:my-0">
       <h1 className="sr-only">Maria Burmeister</h1>
       <p
         aria-hidden

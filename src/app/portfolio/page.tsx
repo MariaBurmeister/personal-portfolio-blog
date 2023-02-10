@@ -1,7 +1,12 @@
 import { FunctionComponent } from "react";
+import About from "./about/page";
 
 const Portfolio: FunctionComponent = () => {
-  return <></>;
+  return (
+    <>
+      <About />
+    </>
+  );
 };
 
 export default Portfolio;
