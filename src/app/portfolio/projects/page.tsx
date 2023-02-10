@@ -17,6 +17,7 @@ const Projects: FunctionComponent = () => {
       {data &&
         data.map(({ id, name, description, html_url, language }) => (
           <Project
+            key={id}
             id={id}
             name={name}
             description={description}

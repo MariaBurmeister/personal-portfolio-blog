@@ -1,11 +1,11 @@
 import { Card } from "@/components/Card";
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent } from "react";
 
 const Experience: FunctionComponent = () => {
   return (
     <ul className="grid items-start gap-24 py-24">
-      {mockExperience.map(({}) => (
-        <ExperienceBlock />
+      {mockExperience.map(({}, i) => (
+        <ExperienceBlock key={i} />
       ))}
     </ul>
   );
