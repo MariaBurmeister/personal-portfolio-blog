@@ -27,11 +27,11 @@ export const SecondaryNav: FunctionComponent<{
   }, [location]);
 
   return (
-    <nav className="flex flex-row items-center px-4 align-middle">
-      <h3 className="pt-1 font-rubikMono text-lg leading-none">
+    <nav className="flex flex-row items-center gap-4 align-middle md:px-4">
+      <h3 className="pt-1 font-rubikMono text-lg leading-none text-purple-600">
         {activeRoute?.label}
       </h3>
-      <ul className="flex grow flex-row justify-end gap-4">
+      <ul className="flex grow flex-row justify-end gap-4 text-purple-400 ">
         {routes
           .filter(({ label }) => label !== activeRoute?.label)
           .map(({ label, path }) => (
@@ -64,6 +64,7 @@ const SecondaryNavItem: FunctionComponent<SecondaryNavItem> = ({
   return (
     <li key={path}>
       <Link
+        className="rounded-md px-2 py-1 hover:bg-green-100"
         onClick={() => handleClick({ label, path })}
         href={`${indexRoute}${path}`}
       >

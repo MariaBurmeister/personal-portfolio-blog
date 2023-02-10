@@ -45,7 +45,7 @@ export const Card: FunctionComponent<Card> = ({
       ${className}
     `}
     >
-      <header className="flex max-w-full items-center justify-between">
+      <header className="flex max-w-full items-center justify-between gap-4">
         <h4
           className={`${
             title ? "" : "sr-only"
