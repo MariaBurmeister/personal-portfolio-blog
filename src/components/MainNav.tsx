@@ -13,12 +13,18 @@ export const MainNav: FunctionComponent = () => {
       </Link>
       <ul className="my-2 ml-4 flex grow flex-row flex-wrap justify-center gap-4 p-0 align-middle text-purple-300">
         <li className="self-center py-2">
-          <Link className="active:text-green-500" href="/portfolio">
+          <Link
+            className="rounded-md px-2 py-1 hover:bg-purple-100 hover:text-purple-500"
+            href="/portfolio"
+          >
             Portfolio
           </Link>
         </li>
         <li className="self-center py-2">
-          <Link className="active:text-green-500" href="blog">
+          <Link
+            className="rounded-md px-2 py-1 hover:bg-purple-100 hover:text-purple-500"
+            href="blog"
+          >
             Blog
           </Link>
         </li>
