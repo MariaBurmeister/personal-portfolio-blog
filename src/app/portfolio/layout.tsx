@@ -21,7 +21,8 @@ const PortfolioLayout: FunctionComponent<Layout> = ({ children }) => {
           <SecondaryNav indexRoute="/portfolio" routes={Routes} />
           <hr className="mt-4" />
         </header>
-        <main className="pt-4 md:overflow-scroll">{children}</main>
+        <main className="grow py-4 md:overflow-scroll">{children}</main>
+        <hr />
       </section>
     </main>
   );
