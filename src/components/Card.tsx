@@ -49,7 +49,7 @@ export const Card: FunctionComponent<Card> = ({
         <h4
           className={`${
             title ? "" : "sr-only"
-          } max-w-full shrink text-ellipsis break-words  font-bold line-clamp-1`}
+          } max-w-full shrink text-ellipsis break-words font-bold line-clamp-1`}
         >
           {title || label}
         </h4>

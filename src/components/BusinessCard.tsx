@@ -8,6 +8,7 @@ import {
   BsLinkedin as LinkedIn,
   BsGlobe2 as Website,
 } from "react-icons/bs";
+
 export const BusinessCard: FunctionComponent<{ className: string }> = ({
   className,
 }) => {

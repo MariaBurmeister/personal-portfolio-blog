@@ -13,7 +13,7 @@ const Projects: FunctionComponent = () => {
       {isLoading && (
         <p className="text-2xs absolute left-4 bottom-0">loading...</p>
       )}
-      {error && <p>Error: {error.message + error.cause}</p>}
+      {error && <p>Error: {error.message + " " + error.cause}</p>}
       {data &&
         data.map(({ id, name, description, url, language }) => (
           <Project

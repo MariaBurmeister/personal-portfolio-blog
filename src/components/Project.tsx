@@ -1,6 +1,7 @@
 import { FunctionComponent, useState } from "react";
 import { Card } from "./Card";
 import { BsGithub as GitHub } from "react-icons/bs";
+import { LinkButton } from "./LinkButton";
 
 interface Project {
   id: number;
@@ -37,12 +38,7 @@ const ProjectActions: FunctionComponent<{ gitHubLink: string }> = ({
 }) => {
   return (
     <>
-      <a
-        href=""
-        className="rounded-full border  border-purple-900 bg-purple-100 px-2 py-1 shadow-sm shadow-green-400 hover:shadow-md hover:shadow-green-400"
-      >
-        Open
-      </a>
+      <LinkButton href="">Open</LinkButton>
 
       <a href={gitHubLink} className="group flex items-center gap-2 text-2xl">
         <span className="text-sm text-purple-400 underline opacity-0 group-hover:opacity-100">
