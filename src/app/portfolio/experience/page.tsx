@@ -16,13 +16,13 @@ const Experience: FunctionComponent = () => {
           <Icon
             icon="ph:tag-chevron"
             rotate={45}
-            className="mx-auto mb-1 text-purple-400"
+            className="mx-auto my-3 text-purple-400"
             width={80}
           />
           <Icon
             icon="ph:tag-chevron"
             rotate={45}
-            className="mx-auto -mb-2 text-purple-400"
+            className="mx-auto text-purple-400"
             width={80}
           />
         </>
@@ -94,7 +94,13 @@ const ExperienceBlock: FunctionComponent<ExperienceBlock> = ({
 const ExperienceStack: FunctionComponent<{ stack: Stack }> = ({ stack }) => (
   <>
     {stack.map(({ name, icon }) =>
-      icon ? <Icon icon={icon} /> : <span className="text-xs">{name}</span>
+      icon ? (
+        <Icon key={icon} icon={icon} />
+      ) : (
+        <span key={name} className="text-xs">
+          {name}
+        </span>
+      )
     )}
   </>
 );

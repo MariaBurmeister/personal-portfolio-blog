@@ -18,13 +18,14 @@ const About: FunctionComponent = () => (
             icon="mdi:face-man-shimmer"
             aria-hidden
           />{" "}
-          Hi, I'm Gabi!
+          Hi, I&apos;m Gabi!
         </h4>
         <p>
-          I'm a self-thaught <strong>Frontend Engineer</strong> with a
+          I&apos;m a self-thaught <strong>Frontend Engineer</strong> with a
           <strong> Graphic design </strong>
           background, and a passion for developing{" "}
-          <strong>delightful UX's</strong> and <strong>polished UI's</strong>.
+          <strong>delightful UX&apos;s</strong> and{" "}
+          <strong>polished UI&apos;s</strong>.
         </p>
       </>
       <>
@@ -55,9 +56,9 @@ const About: FunctionComponent = () => (
       </>
       <>
         <p className="mb-4">
-          I'm currently looking for a new opportunity, so if you have a position
-          for which you think I would be a good fit, please feel free to reach
-          out!
+          I&apos;m currently looking for a new opportunity, so if you have a
+          position for which you think I would be a good fit, please feel free
+          to reach out!
         </p>
         <LinkButton href="mailto:mariaburmeister+work-origin:portfolio">
           Email me!

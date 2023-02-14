@@ -18,7 +18,7 @@ export const MainNav: FunctionComponent = () => {
       </Link>
       <ul className="my-2 ml-4 flex grow flex-row flex-wrap justify-center gap-4 p-0 align-middle text-purple-300">
         {routes.map(({ path, label }) => (
-          <MainNavItem label={label} path={path} />
+          <MainNavItem key={path} label={label} path={path} />
         ))}
       </ul>
       {/*todo: dark-theme & toggle */}
