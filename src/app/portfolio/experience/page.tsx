@@ -53,7 +53,7 @@ interface ExperienceBlock {
   stack: Stack;
 }
 
-export const ExperienceBlock: FunctionComponent<ExperienceBlock> = ({
+const ExperienceBlock: FunctionComponent<ExperienceBlock> = ({
   title,
   company,
   location,
