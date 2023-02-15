@@ -14,12 +14,14 @@ const Experience: FunctionComponent = () => {
       styleSteps="max-w-[500px] md:max-w-[600px]"
       nextStep={[
         <Icon
+          key="icon1"
           icon="svg-spinners:bars-fade"
           rotate={45}
           className="mx-auto mt-4 text-green-100 shadow-green-300 drop-shadow-lg"
           width={40}
         />,
         <Icon
+          key="icon2"
           icon="svg-spinners:bars-fade"
           rotate={45}
           className="mx-auto text-green-100 shadow-green-300 drop-shadow-lg"
@@ -28,12 +30,14 @@ const Experience: FunctionComponent = () => {
       ]}
       prevStep={[
         <Icon
+          key="icon3"
           icon="svg-spinners:bars-fade"
           rotate={45}
           className="mx-auto text-green-100 shadow-green-300 drop-shadow-lg"
           width={40}
         />,
         <Icon
+          key="icon4"
           icon="svg-spinners:bars-fade"
           rotate={45}
           className="mx-auto mb-4 text-green-100 shadow-green-300 drop-shadow-lg"
