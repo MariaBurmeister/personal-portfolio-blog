@@ -22,9 +22,9 @@ export const Project: FunctionComponent<Project> = ({
       title={name}
       titleHelp={language}
       label={name}
+      styleContent="relative text-purple-400 p-2 rounded rounded-md min-h-[4rem]"
       footer={<ProjectActions gitHubLink={url} />}
-      styleContent="relative  text-purple-400 p-2 rounded rounded-md min-h-[4rem] "
-      styleFooter="flex justify-between items-center pr-2 pt-1"
+      styleFooter="flex flex-wrap justify-between items-center pr-2 pt-1 md:flex-nowrap"
     >
       <p className="line-clamp-2 hover:line-clamp-none">
         {description ?? name}

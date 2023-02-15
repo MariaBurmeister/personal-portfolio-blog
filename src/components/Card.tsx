@@ -38,10 +38,15 @@ export const Card: FunctionComponent<Card> = ({
       className={`
       relative
       rounded rounded-${rounded} 
-      border border-purple-900  
+      border 
+      border-purple-900  
+      bg-gradient-to-b
+      from-white
+      to-purple-100 
       p-4
-    text-purple-900
-      shadow-lg shadow-purple-200
+      text-purple-900 
+      shadow-lg 
+      shadow-purple-200
       ${className}
     `}
     >

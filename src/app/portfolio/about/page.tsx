@@ -6,9 +6,11 @@ import { LinkButton, Steps } from "@/components";
 const About: FunctionComponent = () => (
   <>
     <Steps
-      className=" max-h-96 py-4 text-center text-lg text-slate-600 md:h-full"
-      styleSteps="self-center"
-      halfStep={<Icon icon="mdi:chevron-triple-down" className="m-auto" />}
+      direction="horizontal"
+      className=" max-h-fit py-4 text-center text-lg text-slate-600 md:h-full"
+      styleSteps="max-w-[80%]"
+      nextStep={<Icon icon="mdi:chevron-right" />}
+      prevStep={<Icon icon="mdi:chevron-left" />}
     >
       <>
         <h4 className="mb-8 text-2xl font-bold text-purple-300">

@@ -10,24 +10,36 @@ const Experience: FunctionComponent = () => {
 
   return (
     <Steps
-      className="relative max-h-96 md:h-full"
-      halfStep={
-        <>
-          <Icon
-            icon="ph:tag-chevron"
-            rotate={45}
-            className="mx-auto my-3 text-purple-400"
-            width={80}
-          />
-          <Icon
-            icon="ph:tag-chevron"
-            rotate={45}
-            className="mx-auto text-purple-400"
-            width={80}
-          />
-        </>
-      }
-      halfStepBaseline={100}
+      className="relative max-h-96 px-4 md:h-full"
+      styleSteps="max-w-[500px] md:max-w-[600px]"
+      nextStep={[
+        <Icon
+          icon="svg-spinners:bars-fade"
+          rotate={45}
+          className="mx-auto mt-4 text-green-100 shadow-green-300 drop-shadow-lg"
+          width={40}
+        />,
+        <Icon
+          icon="svg-spinners:bars-fade"
+          rotate={45}
+          className="mx-auto text-green-100 shadow-green-300 drop-shadow-lg"
+          width={40}
+        />,
+      ]}
+      prevStep={[
+        <Icon
+          icon="svg-spinners:bars-fade"
+          rotate={45}
+          className="mx-auto text-green-100 shadow-green-300 drop-shadow-lg"
+          width={40}
+        />,
+        <Icon
+          icon="svg-spinners:bars-fade"
+          rotate={45}
+          className="mx-auto mb-4 text-green-100 shadow-green-300 drop-shadow-lg"
+          width={40}
+        />,
+      ]}
     >
       {isLoading && (
         <p className="text-2xs absolute left-4 bottom-0">loading...</p>

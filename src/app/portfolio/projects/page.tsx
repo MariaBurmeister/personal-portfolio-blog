@@ -7,7 +7,7 @@ const Projects: FunctionComponent = () => {
   const { data, error, isLoading } = useProjects();
   return (
     <ul
-      className="grid items-start gap-4"
+      className="grid items-start gap-4 px-4"
       style={{ gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))" }}
     >
       {isLoading && (
