@@ -1,6 +1,6 @@
 import { MainNav } from "@/components";
 import { FunctionComponent, ReactNode } from "react";
-import "./globals.css";
+import "./globals.scss";
 
 interface Layout {
   children: ReactNode;
