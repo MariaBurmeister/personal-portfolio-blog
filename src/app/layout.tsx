@@ -21,7 +21,7 @@ const RootLayout: FunctionComponent<Layout> = ({ children }) => {
           crossOrigin=""
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Plaster&family=Rubik+Mono+One&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Plaster&family=Rubik+Mono+One&family=Baskervville&display=swap"
           rel="stylesheet"
         />
       </head>
