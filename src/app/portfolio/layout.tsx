@@ -1,5 +1,5 @@
 import { BusinessCard } from "@/components";
-import { FunctionComponent, lazy, ReactNode, useState } from "react";
+import { FunctionComponent, ReactNode } from "react";
 import { SecondaryNav, NavRoute } from "./SecondaryNav";
 
 interface Layout {
@@ -15,14 +15,20 @@ const Routes: NavRoute[] = [
 const PortfolioLayout: FunctionComponent<Layout> = ({ children }) => {
   return (
     <main className="flex flex-wrap items-stretch gap-8 md:flex-nowrap">
-      <BusinessCard className="max-h-fit grow md:min-w-fit md:max-w-fit" />
-      <section className="relative flex grow flex-col overflow-auto rounded-xl bg-gradient-to-b from-white to-purple-100 p-4 shadow-2xl md:max-h-[453px] ">
-        <header className="sticky flex w-full flex-col">
+      <BusinessCard className="grow md:min-w-fit md:max-w-fit" />
+      <section
+        className="relative grid h-[453px] grow overflow-auto rounded-xl bg-gradient-to-b from-white to-purple-100 px-4 shadow-2xl"
+        style={{ gridTemplateRows: "auto 1fr auto" }}
+      >
+        <header className="sticky top-0 z-20 flex flex-col items-stretch gap-4 bg-white pt-4">
           <SecondaryNav indexRoute="/portfolio" routes={Routes} />
-          <hr className="mt-4" />
+          <hr />
         </header>
-        <main className="grow md:overflow-scroll">{children}</main>
-        <hr />
+        <main className="overflow-scroll">{children}</main>
+        <footer className="sticky bottom-0 z-20 bg-purple-100 pb-4">
+          <hr />
+          {/* footer content */}
+        </footer>
       </section>
     </main>
   );
