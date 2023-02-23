@@ -6,11 +6,9 @@ import { LinkButton, Steps } from "@/components";
 const About: FunctionComponent = () => (
   <>
     <Steps
-      direction="horizontal"
-      className=" max-h-fit py-4 text-center text-lg text-slate-600 md:h-full"
-      styleSteps="max-w-[80%]"
-      nextStep={<Icon icon="mdi:chevron-right" />}
-      prevStep={<Icon icon="mdi:chevron-left" />}
+      className="py-4 text-center text-lg text-slate-600"
+      nextStep={<Stepper stepTo="next" />}
+      prevStep={<Stepper stepTo="prev" />}
     >
       <>
         <h4 className="mb-8 text-2xl font-bold text-purple-300">
@@ -62,8 +60,11 @@ const About: FunctionComponent = () => (
           position for which you think I would be a good fit, please feel free
           to reach out!
         </p>
-        <LinkButton href="mailto:mariaburmeister+work-origin:portfolio">
-          Email me!
+        <LinkButton
+          className="border-none bg-gradient-to-b from-purple-200 to-purple-500 py-1 px-4  text-green-100"
+          href="mailto:mariaburmeister+work-origin:portfolio"
+        >
+          email me
         </LinkButton>
       </>
     </Steps>
@@ -71,3 +72,19 @@ const About: FunctionComponent = () => (
 );
 
 export default About;
+
+const Stepper: FunctionComponent<{
+  direction?: "horizontal" | "vertical";
+  stepTo: "next" | "prev";
+}> = ({ direction = "horizontal", stepTo }) => {
+  const nextDirection = direction === "horizontal" ? "right" : "down";
+  const prevDirection = direction === "horizontal" ? "left" : "up";
+
+  return (
+    <Icon
+      inline
+      icon={`mdi:chevron-${stepTo === "next" ? nextDirection : prevDirection}`}
+      className="rounded-full bg-slate-100 text-slate-600 hover:bg-slate-400"
+    />
+  );
+};
