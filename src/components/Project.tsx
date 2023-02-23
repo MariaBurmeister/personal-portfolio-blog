@@ -21,8 +21,7 @@ export const Project: FunctionComponent<Project> = ({
     <Card
       title={name}
       titleHelp={language}
-      label={name}
-      styleContent="relative text-purple-400 p-2 rounded rounded-md min-h-[4rem]"
+      styleContent="text-purple-400 p-2 rounded rounded-md min-h-[4rem]"
       footer={<ProjectActions gitHubLink={url} />}
       styleFooter="flex flex-wrap justify-between items-center pr-2 pt-1 md:flex-nowrap"
     >
