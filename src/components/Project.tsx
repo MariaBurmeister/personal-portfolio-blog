@@ -43,7 +43,7 @@ const ProjectActions: FunctionComponent<{ gitHubLink: string }> = ({
         href={gitHubLink}
         target="_blank"
         rel="noreferrer"
-        className="group flex items-center gap-2 text-2xl"
+        className="group flex grow items-center justify-end gap-2 text-2xl"
       >
         <span className="text-sm text-purple-400 underline opacity-0 group-hover:opacity-100">
           check in GitHub
