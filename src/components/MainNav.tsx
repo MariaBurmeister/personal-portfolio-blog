@@ -9,7 +9,7 @@ const routes = [
 
 export const MainNav: FunctionComponent = () => {
   return (
-    <nav className="-ml-3 -mr-2 flex flex-row flex-wrap justify-between align-middle">
+    <nav className="relative z-50 -ml-3 -mr-2 flex flex-row flex-wrap justify-between align-middle">
       <Link
         href="/"
         className="self-center rounded-full bg-purple-100 px-2 py-3 font-rubikMono text-xl text-purple-600 ring-2 ring-purple-600 ring-offset-4"
