@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import Link, { LinkProps } from "next/link";
 import { FunctionComponent } from "react";
 
 const routes = [
@@ -16,9 +16,9 @@ export const MainNav: FunctionComponent = () => {
       >
         <span className=" text-green-200">M</span>B
       </Link>
-      <ul className="my-2 ml-4 flex grow flex-row flex-wrap justify-center gap-4 p-0 align-middle text-purple-300">
+      <ul className="my-2 ml-4 flex grow flex-row flex-wrap justify-center gap-8 p-0 align-middle text-purple-300">
         {routes.map(({ path, label }) => (
-          <MainNavItem key={path} label={label} path={path} />
+          <MainNavItem key={path} label={label} href={path} />
         ))}
       </ul>
       {/*todo: dark-theme & toggle */}
@@ -35,20 +35,20 @@ export interface NavRoute {
 }
 
 // todo: active route state ? see if use client is worth it
-interface NavItem {
+interface NavItem extends LinkProps {
   label: RouteName;
-  path: RoutePath;
+  href: RoutePath;
   // isActive?: boolean;
   // handleClick?: ({ label, path }: NavRoute) => void;
 }
 
-const MainNavItem: FunctionComponent<NavItem> = ({ label, path }) => {
+const MainNavItem: FunctionComponent<NavItem> = ({ label, href, ...rest }) => {
   return (
-    <li key={path} className="-ml-4 self-center py-2">
+    <li key={href} className="-ml-4 self-center py-2">
       <Link
-        className="rounded-md px-2 py-1 hover:bg-purple-100 hover:text-purple-500"
-        href={path}
-        // onClick={() => handleClick({ label, path })}
+        className={`rounded-md px-2 py-1 hover:bg-purple-100 hover:text-purple-500`}
+        href={href}
+        {...rest}
       >
         {label}
       </Link>
