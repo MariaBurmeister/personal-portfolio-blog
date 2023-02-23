@@ -33,7 +33,7 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
       <header>
         <Image
           src={GABI}
-          alt="professional-headshot of Maria Burmeister"
+          alt="a proofile picture of Maria Burmeister"
           className="mr-auto h-32 w-32 rounded-full object-cover object-right-top ring-2 ring-purple-900 ring-offset-4 md:mx-auto "
         />
         <h1 className="text-wrap mt-4 truncate whitespace-pre-line text-left font-rubikMono text-xl font-bold text-purple-600 ">
