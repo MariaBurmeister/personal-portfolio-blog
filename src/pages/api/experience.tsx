@@ -14,8 +14,8 @@ export interface Experience {
   title: string;
   company: string;
   location: string;
-  startDate: Date;
-  endDate: Date;
+  startDate: string;
+  endDate: string;
   description: string;
   projects?: ProjectData[];
   stack: Stack;
@@ -46,8 +46,8 @@ const experiences: Experiences = [
     title: "Software Engineering Intern",
     company: "Claimsforce",
     location: "Hamburg, Germany",
-    startDate: new Date("02-01-2021"),
-    endDate: new Date("07-31-2021"),
+    startDate: "02-01-2021",
+    endDate: "07-31-2021",
     description: `
         During my internship, I worked on a self-contained full-stack project called decision tree.
         It was a tool to build and answer questionnaires which led to different outcomes depending on previous answers.
@@ -109,8 +109,8 @@ const experiences: Experiences = [
     title: "Junior Frontend Engineer",
     company: "Claimsforce",
     location: "Hamburg, Germany",
-    startDate: new Date("08-01-2021"),
-    endDate: new Date("08-31-2022"),
+    startDate: "08-01-2021",
+    endDate: "08-31-2022",
     description: `
         As a Junior Frontend developer I worked in an multidisciplinary
         team developing features to a Digital Product in a fast-
