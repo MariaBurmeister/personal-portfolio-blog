@@ -185,11 +185,11 @@ export const VerticalSteps: FunctionComponent<Steps> = ({
   }, [container]);
 
   const handleScroll = (e: UIEvent<HTMLDivElement>) => {
-    if (hasReachedEnd(container, 90)) {
+    if (hasReachedEnd(container, 150)) {
       setIsScrollEnd(true);
       console.log("end");
       return;
-    } else if (hasReachedStart(container, 90)) {
+    } else if (hasReachedStart(container, 150)) {
       setIsScrollStart(true);
       console.log("start");
       return;
@@ -360,52 +360,3 @@ const StepperPrev: FunctionComponent<{
     </button>
   );
 };
-
-/* <Steppers
-  scrollAhead={scrollAhead}
-  scrollBack={scrollBack}
-  isScrollEnd={isScrollEnd}
-  isScrollStart={isScrollStart}
-  stepperNext={nextStep}
-  stepperPrev={prevStep}
-/> */
-
-// const Steppers: FunctionComponent<{
-//   scrollAhead: MouseEventHandler<HTMLButtonElement>;
-//   scrollBack: MouseEventHandler<HTMLButtonElement>;
-//   isScrollStart: boolean;
-//   isScrollEnd: boolean;
-//   stepperPrev?: ReactNode;
-//   stepperNext?: ReactNode;
-// }> = ({
-//   isScrollStart,
-//   isScrollEnd,
-//   stepperNext,
-//   stepperPrev,
-//   scrollAhead,
-//   scrollBack,
-// }) => {
-//   return (
-//     <section
-//       id="steppers"
-//       className={`top-50 left-50 fixed z-50 flex grow justify-between`}
-//     >
-//       <button
-//         className={isScrollStart ? "invisible" : ""}
-//         disabled={isScrollStart}
-//         onClick={scrollBack}
-//       >
-//         {stepperPrev}
-//         <span className="sr-only">scroll to previous pane</span>
-//       </button>
-//       <button
-//         className={isScrollEnd ? "invisible" : ""}
-//         disabled={isScrollEnd}
-//         onClick={scrollAhead}
-//       >
-//         {stepperNext}
-//         <span className="sr-only">scroll to next pane</span>
-//       </button>
-//     </section>
-//   );
-// };
