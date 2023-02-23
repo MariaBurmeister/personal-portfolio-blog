@@ -72,13 +72,13 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
       </section>
       <section className="mt-4 flex flex-row flex-wrap justify-around gap-2 text-purple-800">
         <a href="https://github.com/MariaBurmeister">
-          <GitHub className="inline text-xl" />
+          <GitHub className="inline text-xl" target="_blank" />
         </a>
         <a href="https://www.linkedin.com/in/mariaburmeister/">
-          <LinkedIn className="inline text-xl" />
+          <LinkedIn className="inline text-xl" target="_blank" />
         </a>
         <a href="https://mariaburmeister.com">
-          <Website className="inline text-xl" />
+          <Website className="inline text-xl" target="_blank" />
         </a>
       </section>
     </section>

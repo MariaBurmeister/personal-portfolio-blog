@@ -40,7 +40,11 @@ const ProjectActions: FunctionComponent<{ gitHubLink: string }> = ({
     <>
       <LinkButton href="">Open</LinkButton>
 
-      <a href={gitHubLink} className="group flex items-center gap-2 text-2xl">
+      <a
+        href={gitHubLink}
+        target="_blank"
+        className="group flex items-center gap-2 text-2xl"
+      >
         <span className="text-sm text-purple-400 underline opacity-0 group-hover:opacity-100">
           check in GitHub
         </span>
