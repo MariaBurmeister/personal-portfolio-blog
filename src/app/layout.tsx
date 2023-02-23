@@ -1,4 +1,4 @@
-import { MainNav } from "@/components";
+import { AnalyticsWrapper, MainNav } from "@/components";
 import { FunctionComponent, ReactNode } from "react";
 import "./globals.scss";
 
@@ -27,6 +27,7 @@ const RootLayout: FunctionComponent<Layout> = ({ children }) => {
       </head>
       <body className="relative flex min-h-[100dvh] flex-col gap-8 bg-gradient-to-r from-green-200 to-purple-500 p-6 md:justify-center  md:px-16 lg:px-36">
         {children}
+        <AnalyticsWrapper />
         <footer className="sticky bottom-1 shrink rounded-xl bg-white px-2 shadow-2xl">
           <MainNav />
         </footer>
