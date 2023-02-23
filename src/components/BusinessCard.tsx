@@ -48,7 +48,6 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
           Frontend Developer
         </h2>
       </header>
-      {/* <section>// skills</section> */}
 
       <section className="-mx-6 my-auto bg-purple-200 p-4 text-center shadow-inner shadow-purple-300">
         <p className=" mb-2 self-center text-center align-middle leading-tight text-purple-800">
