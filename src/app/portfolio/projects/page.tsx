@@ -7,11 +7,11 @@ const Projects: FunctionComponent = () => {
   const { data, error, isLoading } = useProjects();
   return (
     <ul
-      className="grid items-start gap-4 px-4"
+      className="grid items-start gap-4 px-4 py-1"
       style={{ gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))" }}
     >
       {isLoading && (
-        <p className="text-2xs absolute left-4 bottom-0">loading...</p>
+        <p className="text-2xs absolute left-4 bottom-0 z-10">loading...</p>
       )}
       {error && <p>Error: {error.message + " " + error.cause}</p>}
       {data &&
@@ -25,25 +25,8 @@ const Projects: FunctionComponent = () => {
             language={language}
           />
         ))}
-      {/* {mockProjects.map(({ id, name, description, html_url, language }) => (
-        <Project
-          id={id}
-          name={name}
-          description={description}
-          html_url={html_url}
-          language={[language]}
-        />
-      ))} */}
     </ul>
   );
 };
 
 export default Projects;
-
-const mockProjects = Array.from({ length: 10 }, (_, i) => ({
-  id: i,
-  name: `Project ${i}`,
-  description: `This is a long long long long long long long long long long long long long  description for project ${i}`,
-  html_url: "",
-  language: "TypeScript",
-}));
