@@ -37,7 +37,7 @@ const ProjectActions: FunctionComponent<{ gitHubLink: string }> = ({
 }) => {
   return (
     <>
-      <LinkButton href="">Open</LinkButton>
+      {/* <LinkButton href="">Open</LinkButton> */}
 
       <a
         href={gitHubLink}
