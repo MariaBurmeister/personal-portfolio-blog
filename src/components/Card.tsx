@@ -14,20 +14,27 @@ interface Card {
   // clampContent?: boolean;
 }
 
-// at least a label is required for accessibility, but a title is preferred.
-// if a title is not provided, the label will be used as the title, but will be hidden from view.
+// a card is a container for content.
+// it has a title, a main content area and a footer.
 
-// the className prop is used to apply custom styles to the containing article element (Card).
+// a title is required for accessibility reasons. Yup, even if you don't want to show it. You can hide it with the hideTitle prop.
 
-// the styleContent prop is used to apply custom styles to the main content element (children-container).
+// the rounded prop is used to apply a border radius to the card.
+// the shadow prop is used to apply a box shadow to the card.
 
-// the footer prop is used to render a footer element at the bottom of the card.
-// the styleFooter prop is used to apply custom styles to the footer element.
+// the className prop is used to apply custom styles to the Card (<article/>).
+
+// the styleContent prop is used to apply custom styles to the content (<main/>).
+
+// the footer prop is used to render content inside a <footer/> at the bottom of the card.
+// the styleFooter prop is used to apply custom styles to the footer (<footer/>).
+
+// TODO: replace <hr/> with divide tailwind class
 
 export const Card: FunctionComponent<Card> = ({
   className,
   rounded,
-  shadow,
+  shadow = "lg",
   title,
   hideTitle,
   titleHelp,
@@ -46,7 +53,7 @@ export const Card: FunctionComponent<Card> = ({
       bg-gradient-to-b from-white to-purple-100 
       p-4 
       text-purple-900 
-      ${shadow ?? `shadow-${shadow}`}  shadow-purple-200 
+      ${shadow ? `shadow-${shadow}` : ""}  shadow-purple-200 
       ${className}
     `}
     >

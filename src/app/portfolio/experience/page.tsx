@@ -77,8 +77,8 @@ const ExperienceBlock: FunctionComponent<ExperienceBlock> = ({
           </span>
         </p>
       }
-      shadow="3xl"
-      className="max-w-[600px]"
+      shadow="2xl"
+      className="mx-6 max-w-[600px]"
       styleContent="relative"
       footer={<ExperienceStack stack={stack} />}
       styleFooter="flex justify-between flex-wrap grow items-center pr-2 pt-1"
