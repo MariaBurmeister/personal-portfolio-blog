@@ -42,6 +42,7 @@ export default function getProjects(
       if (data.status === 200) {
         return data.json();
       }
+      console.log("failed");
       res.status(data.status || 500).end(data.statusText);
     })
     .then((data) => {
