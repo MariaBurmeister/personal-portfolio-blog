@@ -33,7 +33,8 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
       <header>
         <Image
           src={GABI}
-          alt="a proofile picture of Maria Burmeister"
+          width={128}
+          alt="Maria Burmeister"
           className="mr-auto h-32 w-32 rounded-full object-cover object-right-top ring-2 ring-purple-900 ring-offset-4 md:mx-auto "
         />
         <h1 className="text-wrap mt-4 truncate whitespace-pre-line text-left font-rubikMono text-xl font-bold text-purple-600 ">
@@ -72,12 +73,15 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
       <section className="mt-4 flex flex-row flex-wrap justify-around gap-2 text-purple-800">
         <a href="https://github.com/MariaBurmeister">
           <GitHub className="inline text-xl" target="_blank" />
+          <span className="sr-only">GitHub</span>
         </a>
         <a href="https://www.linkedin.com/in/mariaburmeister/">
           <LinkedIn className="inline text-xl" target="_blank" />
+          <span className="sr-only">LinkedIn</span>
         </a>
         <a href="https://mariaburmeister.com">
           <Website className="inline text-xl" target="_blank" />
+          <span className="sr-only"> This Website</span>
         </a>
       </section>
     </section>
