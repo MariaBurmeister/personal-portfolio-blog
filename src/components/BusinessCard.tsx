@@ -81,7 +81,7 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
         </a>
         <a href="https://mariaburmeister.com">
           <Website className="inline text-xl" target="_blank" />
-          <span className="sr-only"> This Website</span>
+          <span className="sr-only">This Website</span>
         </a>
       </section>
     </section>
