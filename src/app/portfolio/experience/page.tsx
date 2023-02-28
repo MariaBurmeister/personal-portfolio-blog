@@ -10,23 +10,26 @@ const Experience: FunctionComponent = () => {
   const { data, isLoading, error } = useExperience();
 
   return (
-    <VerticalSteps
-      nextStep={<TimelineStepper />}
-      prevStep={<TimelineStepper />}
-    >
-      {isLoading && (
-        <p className="text-2xs absolute left-4 bottom-0 z-10">loading...</p>
-      )}
-      {error && (
-        <p className="text-2xs p-4">
-          Error: {error.message + " " + error.cause}
-        </p>
-      )}
-      {data &&
-        data.map((experience, i) => (
-          <ExperienceBlock key={i} {...experience} />
-        ))}
-    </VerticalSteps>
+    <>
+      <h2 className="sr-only">Experience</h2>
+      <VerticalSteps
+        nextStep={<TimelineStepper />}
+        prevStep={<TimelineStepper />}
+      >
+        {isLoading && (
+          <p className="text-2xs absolute left-4 bottom-0 z-10">loading...</p>
+        )}
+        {error && (
+          <p className="text-2xs p-4">
+            Error: {error.message + " " + error.cause}
+          </p>
+        )}
+        {data &&
+          data.map((experience, i) => (
+            <ExperienceBlock key={i} {...experience} />
+          ))}
+      </VerticalSteps>
+    </>
   );
 };
 

@@ -15,6 +15,7 @@ const Routes: NavRoute[] = [
 const PortfolioLayout: FunctionComponent<Layout> = ({ children }) => {
   return (
     <main className="flex flex-wrap items-stretch gap-8 md:flex-nowrap">
+      <h1 className="sr-only">Maria Burmeister | Portfolio</h1>
       <BusinessCard className="grow md:min-w-fit md:max-w-fit" />
       <section
         className="relative grid h-[453px] grow overflow-auto rounded-xl bg-gradient-to-b from-white to-purple-100 px-4 shadow-2xl"

@@ -5,6 +5,7 @@ import { LinkButton, Steps } from "@/components";
 
 const About: FunctionComponent = () => (
   <>
+    <h2 className="sr-only">About</h2>
     <Steps
       className="py-4 text-center text-lg text-slate-600"
       nextStep={<Stepper stepTo="next" />}
@@ -61,7 +62,7 @@ const About: FunctionComponent = () => (
           to reach out!
         </p>
         <LinkButton
-          className="border-none bg-gradient-to-b from-purple-200 to-purple-500 py-1 px-4  text-green-100"
+          className="border-none bg-gradient-to-b from-purple-200 to-purple-500 py-1 px-4  text-green-100 active:from-purple-500 active:to-purple-200 "
           href="mailto:mariaburmeister+work-origin:portfolio"
         >
           email me
