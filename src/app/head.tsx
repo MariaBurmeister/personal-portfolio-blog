@@ -15,10 +15,7 @@ export default function Head() {
         property="og:description"
         content="Check out my Frontend Developer Portfolio and Blog. Contact me for your open Fontend position. mariaburmeister+work@proton.me"
       />
-      <meta
-        property="og:image"
-        content="https://avatars.githubusercontent.com/u/67270055?v=4"
-      />
+      <meta property="og:image" content="/apple-touch-icon.png" />
       <meta
         name="theme-color"
         media="prefers-color-scheme: dark"
