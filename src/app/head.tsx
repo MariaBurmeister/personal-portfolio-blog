@@ -15,7 +15,10 @@ export default function Head() {
         property="og:description"
         content="Check out my Frontend Developer Portfolio and Blog. Contact me for your open Fontend position. mariaburmeister+work@proton.me"
       />
-      <meta property="og:image" content="apple-touch-icon.png" />
+      <meta
+        property="og:image"
+        content="https://avatars.githubusercontent.com/u/67270055?v=4"
+      />
       <meta
         name="theme-color"
         media="prefers-color-scheme: dark"
@@ -40,6 +43,11 @@ export default function Head() {
         href="/favicon.svg"
         type="image/svg+xml"
         key="favicon-svg"
+      />
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        key="apple-touch-icon"
       />
       <link rel="manifest" href="/site.webmanifest" key="manifest" />
     </>
