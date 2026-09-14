@@ -45,7 +45,7 @@ export const ErrorStatus: FunctionComponent<ErrorStatusProps> = ({
           Portfolio
         </LinkButton>
         <a
-          href="mailto:mariaburmeister+work@proton.me"
+          href="mailto:mariaburmeister+work@mariaburmeister.com"
           className="text-sm text-purple-700 underline hover:text-purple-900"
         >
           Contact me

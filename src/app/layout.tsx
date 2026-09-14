@@ -28,7 +28,7 @@ const baskervville = Baskervville({
 });
 
 const siteDescription =
-  "Check out my Frontend Developer Portfolio. Contact me for your open Frontend position. mariaburmeister+work@proton.me";
+  "Check out my Frontend Developer Portfolio. Contact me for your open Frontend position. mariaburmeister+work@mariaburmeister.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mariaburmeister.com"),

@@ -3,7 +3,9 @@ import { FunctionComponent } from "react";
 import { Icon } from "@iconify/react";
 import { LinkButton, Steps } from "@/components";
 
-const About: FunctionComponent = () => (
+const CONTACT_EMAIL = "mariaburmeister+work@mariaburmeister.com";
+
+export const AboutSection: FunctionComponent = () => (
   <>
     <h2 className="sr-only">About</h2>
     <Steps
@@ -62,8 +64,8 @@ const About: FunctionComponent = () => (
           to reach out!
         </p>
         <LinkButton
-          className="border-none bg-gradient-to-b from-purple-200 to-purple-500 py-1 px-4  text-green-100 active:from-purple-500 active:to-purple-200 "
-          href="mailto:mariaburmeister+work-origin:portfolio"
+          className="border-none bg-gradient-to-b from-purple-200 to-purple-500 px-4 py-1 text-green-100 active:from-purple-500 active:to-purple-200"
+          href={`mailto:${CONTACT_EMAIL}`}
         >
           email me
         </LinkButton>
@@ -71,8 +73,6 @@ const About: FunctionComponent = () => (
     </Steps>
   </>
 );
-
-export default About;
 
 const Stepper: FunctionComponent<{
   direction?: "horizontal" | "vertical";

@@ -55,9 +55,8 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
           <Location className="inline align-baseline text-xs" /> Hamburg - De
         </p>
         <a
-          type="email"
-          href="mailto:mariaburmeister+work@protonmail.com"
-          className="self-center truncate whitespace-normal leading-tight text-purple-800 hover:text-green-600"
+          href="mailto:mariaburmeister+work@mariaburmeister.com"
+          className="self-center truncate whitespace-normal leading-tight text-purple-800 underline hover:text-green-600"
         >
           maria
           <wbr />
@@ -65,9 +64,9 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
           <wbr />
           +work
           <wbr />
-          @proton
+          @mariaburmeister
           <wbr />
-          .me
+          .com
         </a>
       </section>
       <section className="mt-4 flex flex-row flex-wrap justify-around gap-2 text-purple-800">

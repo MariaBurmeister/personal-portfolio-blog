@@ -1,13 +1,12 @@
-import { FunctionComponent } from "react";
-import About from "./about/page";
+import type { Metadata } from "next";
+import { AboutSection } from "./AboutSection";
 
-
-const Portfolio: FunctionComponent = () => {
-  return (
-    <>
-      <About />
-    </>
-  );
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "About Maria Burmeister — frontend engineer with a graphic design background.",
 };
 
-export default Portfolio;
+export default function Portfolio() {
+  return <AboutSection />;
+}
