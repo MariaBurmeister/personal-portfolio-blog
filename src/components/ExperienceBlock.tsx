@@ -34,7 +34,7 @@ export const ExperienceBlock: FunctionComponent<ExperienceBlockProps> = ({
         </>
       }
       titleHelp={
-        <p>
+        <span>
           <span className="rounded-md bg-purple-200 px-2 py-1 text-xs">
             {startDate}
           </span>
@@ -42,7 +42,7 @@ export const ExperienceBlock: FunctionComponent<ExperienceBlockProps> = ({
           <span className="rounded-md bg-purple-200 px-2 py-1 text-xs">
             {endDate}
           </span>
-        </p>
+        </span>
       }
       shadow="2xl"
       className="mx-6 max-w-[600px]"

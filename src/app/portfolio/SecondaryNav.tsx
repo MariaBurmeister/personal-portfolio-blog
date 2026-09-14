@@ -15,27 +15,38 @@ export const SecondaryNav: FunctionComponent<{
   indexRoute: string;
 }> = ({ routes, indexRoute }) => {
   const pathname = usePathname();
-  const activeRoute =
-    routes.find(({ path }) => pathname === `${indexRoute}${path}`) ?? routes[0];
+  const activePath =
+    routes.find(({ path }) => pathname === `${indexRoute}${path}`)?.path ??
+    routes[0]?.path;
 
   return (
-    <nav className="flex flex-row flex-wrap items-center gap-4 align-middle md:px-4">
-      <h3 className="overflow-hidden text-ellipsis pt-1 font-rubikMono text-lg leading-none text-purple-600">
-        {activeRoute?.label}
-      </h3>
-      <ul className="flex grow flex-row flex-wrap justify-end gap-4 text-purple-400">
-        {routes
-          .filter(({ label }) => label !== activeRoute?.label)
-          .map(({ label, path }) => (
-            <li key={path}>
+    <nav
+      aria-label="Portfolio sections"
+      className="flex flex-row flex-wrap items-center gap-4 align-middle md:px-4"
+    >
+      <ul className="flex grow flex-row flex-wrap items-center justify-between gap-4 text-purple-400">
+        {routes.map(({ label, path }) => {
+          const isActive = path === activePath;
+
+          return (
+            <li
+              key={path}
+              className={isActive ? "order-first mr-auto" : undefined}
+            >
               <Link
-                className="rounded-md px-2 py-1 hover:bg-green-100"
+                className={
+                  isActive
+                    ? "pt-1 font-rubikMono text-lg leading-none text-purple-600"
+                    : "rounded-md px-2 py-1 hover:bg-green-100"
+                }
                 href={`${indexRoute}${path}`}
+                aria-current={isActive ? "page" : undefined}
               >
                 {label}
               </Link>
             </li>
-          ))}
+          );
+        })}
       </ul>
     </nav>
   );
