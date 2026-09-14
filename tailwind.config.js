@@ -10,7 +10,6 @@ module.exports = {
       fontFamily: {
         standard: ["sans-serif"],
         rubikMono: ["var(--font-rubik-mono)", "Rubik Mono One", "sans-serif"],
-        plaster: ["var(--font-plaster)", "Plaster", "cursive"],
         baskervville: ["var(--font-baskervville)", "Baskervville", "serif"],
       },
     },

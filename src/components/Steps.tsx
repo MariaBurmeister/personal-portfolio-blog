@@ -40,24 +40,20 @@ export const Steps: FunctionComponent<Steps> = ({
 
   useEffect(() => {
     if (!container.current) return;
-    container.current.addEventListener("scrollstart", (event) => {
+    container.current.addEventListener("scrollstart", () => {
       setIsScrolling(true);
-      console.log("scrollstart");
     });
-    container.current.addEventListener("scrollend", (event) => {
+    container.current.addEventListener("scrollend", () => {
       setIsScrolling(false);
-      console.log("scrollend");
     });
   }, [container]);
 
   const handleScroll = (e: UIEvent<HTMLDivElement>) => {
     if (hasReachedEnd(container, 15)) {
       setIsScrollEnd(true);
-      console.log("end");
       return;
     } else if (hasReachedStart(container, 15)) {
       setIsScrollStart(true);
-      console.log("start");
       return;
     }
     setIsScrollEnd(false);
@@ -85,7 +81,6 @@ export const Steps: FunctionComponent<Steps> = ({
 
   const scrollAhead = () => {
     if (!container.current) return;
-    console.log("scrolling ahead");
     container.current.scrollBy({
       left: container.current.offsetWidth,
       behavior: "smooth",
@@ -94,7 +89,6 @@ export const Steps: FunctionComponent<Steps> = ({
 
   const scrollBack = () => {
     if (!container.current) return;
-    console.log("scrolling back");
     container.current.scrollBy({
       left: -container.current.offsetWidth,
       behavior: "smooth",
@@ -174,24 +168,20 @@ export const VerticalSteps: FunctionComponent<Steps> = ({
 
   useEffect(() => {
     if (!container.current) return;
-    container.current.addEventListener("scrollstart", (event) => {
+    container.current.addEventListener("scrollstart", () => {
       setIsScrolling(true);
-      console.log("scrollstart");
     });
-    container.current.addEventListener("scrollend", (event) => {
+    container.current.addEventListener("scrollend", () => {
       setIsScrolling(false);
-      console.log("scrollend");
     });
   }, [container]);
 
   const handleScroll = (e: UIEvent<HTMLDivElement>) => {
     if (hasReachedEnd(container, 150)) {
       setIsScrollEnd(true);
-      console.log("end");
       return;
     } else if (hasReachedStart(container, 150)) {
       setIsScrollStart(true);
-      console.log("start");
       return;
     }
     setIsScrollEnd(false);
@@ -219,7 +209,6 @@ export const VerticalSteps: FunctionComponent<Steps> = ({
 
   const scrollAhead = () => {
     if (!container.current) return;
-    console.log("scrolling ahead");
     container.current.scrollBy({
       top: container.current.offsetHeight,
       behavior: "smooth",
@@ -228,7 +217,6 @@ export const VerticalSteps: FunctionComponent<Steps> = ({
 
   const scrollBack = () => {
     if (!container.current) return;
-    console.log("scrolling back");
     container.current.scrollBy({
       top: -container.current.offsetHeight,
       behavior: "smooth",

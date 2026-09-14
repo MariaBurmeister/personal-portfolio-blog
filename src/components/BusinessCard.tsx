@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import Image from "next/image";
-import GABI from "../../public/GABI.png";
+import GABI from "../../public/GABI.jpg";
 
 import {
   BsFillGeoAltFill as Location,
@@ -37,6 +37,9 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
         <Image
           src={GABI}
           width={128}
+          height={128}
+          sizes="128px"
+          priority
           alt="Maria Burmeister"
           className="mr-auto h-32 w-32 rounded-full object-cover object-right-top ring-2 ring-purple-900 ring-offset-4 md:mx-auto "
         />

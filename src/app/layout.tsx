@@ -1,6 +1,5 @@
 import {
   Baskervville,
-  Plaster,
   Rubik_Mono_One,
 } from "next/font/google";
 import { AnalyticsWrapper, MainNav, ThemeProvider } from "@/components";
@@ -8,12 +7,6 @@ import type { Metadata, Viewport } from "next";
 import { ReactNode } from "react";
 import "./globals.scss";
 
-
-const plaster = Plaster({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-plaster",
-});
 
 const rubikMono = Rubik_Mono_One({
   weight: "400",
@@ -64,9 +57,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${
-        plaster.variable
-      } ${rubikMono.variable} ${baskervville.variable}`}
+      className={`${rubikMono.variable} ${baskervville.variable}`}
     >
       <body className="relative flex min-h-[100dvh] flex-col gap-8 bg-gradient-to-r from-green-200 to-purple-500 p-6 md:justify-center md:px-16 lg:px-36 dark:from-slate-950 dark:to-purple-950">
         <ThemeProvider>

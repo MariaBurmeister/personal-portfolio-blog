@@ -48,7 +48,10 @@ export const getProjects = async (): Promise<Projects> => {
     headers.Authorization = `Bearer ${token}`;
   }
 
-  const repos = await getData<GitHubRepo[]>(url, { headers });
+  const repos = await getData<GitHubRepo[]>(url, {
+    headers,
+    next: { revalidate: 3600 },
+  });
 
   return repos
     .filter((repo) => FEATURED_PROJECTS.includes(repo.name))

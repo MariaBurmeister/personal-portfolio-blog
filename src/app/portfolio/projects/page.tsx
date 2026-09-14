@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   description: "Selected GitHub projects by Maria Burmeister.",
 };
 
-export const dynamic = "force-dynamic";
+/** Revalidate featured GitHub repos about once an hour. */
+export const revalidate = 3600;
 
 const Projects = async () => {
   const projects = await getProjects();
@@ -15,7 +16,7 @@ const Projects = async () => {
   if (projects.length === 0) {
     return (
       <p className="px-4 py-6 font-baskervville text-purple-800 dark:text-purple-200">
-        No featured projects were returned from GitHub right now.{" "}
+        GitHub returned no matching featured repos.{" "}
         <a
           href="https://github.com/MariaBurmeister"
           target="_blank"
