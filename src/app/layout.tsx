@@ -3,7 +3,7 @@ import {
   Plaster,
   Rubik_Mono_One,
 } from "next/font/google";
-import { AnalyticsWrapper, MainNav } from "@/components";
+import { AnalyticsWrapper, MainNav, ThemeProvider } from "@/components";
 import type { Metadata, Viewport } from "next";
 import { ReactNode } from "react";
 import "./globals.scss";
@@ -63,14 +63,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
-      className={`${plaster.variable} ${rubikMono.variable} ${baskervville.variable}`}
+      suppressHydrationWarning
+      className={`${
+        plaster.variable
+      } ${rubikMono.variable} ${baskervville.variable}`}
     >
-      <body className="relative flex min-h-[100dvh] flex-col gap-8 bg-gradient-to-r from-green-200 to-purple-500 p-6 md:justify-center md:px-16 lg:px-36">
-        {children}
-        <AnalyticsWrapper />
-        <footer className="sticky bottom-1 shrink">
-          <MainNav />
-        </footer>
+      <body className="relative flex min-h-[100dvh] flex-col gap-8 bg-gradient-to-r from-green-200 to-purple-500 p-6 md:justify-center md:px-16 lg:px-36 dark:from-slate-950 dark:to-purple-950">
+        <ThemeProvider>
+          {children}
+          <AnalyticsWrapper />
+          <footer className="sticky bottom-1 shrink">
+            <MainNav />
+          </footer>
+        </ThemeProvider>
       </body>
     </html>
   );

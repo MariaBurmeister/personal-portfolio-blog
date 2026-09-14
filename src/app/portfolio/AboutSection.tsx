@@ -9,12 +9,12 @@ export const AboutSection: FunctionComponent = () => (
   <>
     <h2 className="sr-only">About</h2>
     <Steps
-      className="py-4 text-center text-lg text-slate-600"
+      className="py-4 text-center text-lg text-slate-600 dark:text-slate-300"
       nextStep={<Stepper stepTo="next" />}
       prevStep={<Stepper stepTo="prev" />}
     >
       <>
-        <h4 className="mb-8 text-2xl font-bold text-purple-300">
+        <h4 className="mb-8 text-2xl font-bold text-purple-300 dark:text-purple-200">
           <Icon
             inline
             className="inline align-middle text-green-300"
@@ -85,7 +85,7 @@ const Stepper: FunctionComponent<{
     <Icon
       inline
       icon={`mdi:chevron-${stepTo === "next" ? nextDirection : prevDirection}`}
-      className="rounded-full bg-slate-100 text-slate-600 hover:bg-slate-400"
+      className="rounded-full bg-slate-100 text-slate-600 hover:bg-slate-400 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-600"
     />
   );
 };

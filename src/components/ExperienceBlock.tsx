@@ -30,16 +30,16 @@ export const ExperienceBlock: FunctionComponent<ExperienceBlockProps> = ({
       title={
         <>
           {title} -{" "}
-          <span className="rounded-md bg-green-100 px-2 py-1">@ {company}</span>
+          <span className="rounded-md bg-green-100 px-2 py-1 dark:bg-green-950 dark:text-green-200">@ {company}</span>
         </>
       }
       titleHelp={
         <span>
-          <span className="rounded-md bg-purple-200 px-2 py-1 text-xs">
+          <span className="rounded-md bg-purple-200 px-2 py-1 text-xs dark:bg-purple-900 dark:text-purple-100">
             {startDate}
           </span>
           {" - "}
-          <span className="rounded-md bg-purple-200 px-2 py-1 text-xs">
+          <span className="rounded-md bg-purple-200 px-2 py-1 text-xs dark:bg-purple-900 dark:text-purple-100">
             {endDate}
           </span>
         </span>
@@ -66,7 +66,7 @@ export const ExperienceBlock: FunctionComponent<ExperienceBlockProps> = ({
       </article>
       <button
         type="button"
-        className="font-standard text-xs text-purple-400 underline hover:text-purple-600"
+        className="font-standard text-xs text-purple-400 underline hover:text-purple-600 dark:text-purple-300 dark:hover:text-purple-100"
         aria-expanded={expanded}
         onClick={() => setExpanded(!expanded)}
       >

@@ -321,7 +321,7 @@ const StepperNext: FunctionComponent<{
         <Icon
           inline
           icon={stepper}
-          className="rounded-full bg-slate-100 text-slate-600 hover:bg-slate-400"
+          className="rounded-full bg-slate-100 text-slate-600 hover:bg-slate-400 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-600"
         />
       ) : (
         stepper
@@ -351,7 +351,7 @@ const StepperPrev: FunctionComponent<{
         <Icon
           inline
           icon={stepper}
-          className="rounded-full bg-slate-100 text-slate-600 hover:bg-slate-400"
+          className="rounded-full bg-slate-100 text-slate-600 hover:bg-slate-400 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-600"
         />
       ) : (
         stepper

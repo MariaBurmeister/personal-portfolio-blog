@@ -53,7 +53,11 @@ export const Card: FunctionComponent<Card> = ({
       bg-gradient-to-b from-white to-purple-100 
       p-4 
       text-purple-900 
-      ${shadow ? `shadow-${shadow}` : ""}  shadow-purple-200 
+      dark:border-purple-700
+      dark:from-slate-900
+      dark:to-purple-950
+      dark:text-purple-100
+      ${shadow ? `shadow-${shadow}` : ""}  shadow-purple-200 dark:shadow-purple-950/50
       ${className}
     `}
     >

@@ -14,7 +14,7 @@ const Projects = async () => {
 
   if (projects.length === 0) {
     return (
-      <p className="px-4 py-6 font-baskervville text-purple-800">
+      <p className="px-4 py-6 font-baskervville text-purple-800 dark:text-purple-200">
         No featured projects were returned from GitHub right now.{" "}
         <a
           href="https://github.com/MariaBurmeister"

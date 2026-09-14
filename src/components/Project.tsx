@@ -20,7 +20,7 @@ export const Project: FunctionComponent<Project> = ({
     <Card
       title={name}
       titleHelp={mainLanguage}
-      styleContent="text-purple-400 p-2 rounded rounded-md min-h-[4rem]"
+      styleContent="text-purple-400 p-2 rounded rounded-md min-h-[4rem] dark:text-purple-300"
       footer={<ProjectActions gitHubLink={url} projectName={name} />}
       styleFooter="flex flex-wrap justify-between items-center pr-2 pt-1 md:flex-nowrap"
     >
@@ -43,7 +43,7 @@ const ProjectActions: FunctionComponent<{ gitHubLink: string, projectName: strin
       className="group flex grow items-center justify-end gap-2 text-2xl"
       aria-label={`View ${projectName} on GitHub`}
     >
-      <span className="text-sm text-purple-400 underline opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-all">
+      <span className="text-sm text-purple-400 underline opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-all dark:text-purple-300">
         check on GitHub
       </span>
       <GitHub />

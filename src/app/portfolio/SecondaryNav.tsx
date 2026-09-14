@@ -24,7 +24,7 @@ export const SecondaryNav: FunctionComponent<{
       aria-label="Portfolio sections"
       className="flex flex-row flex-wrap items-center gap-4 align-middle md:px-4"
     >
-      <ul className="flex grow flex-row flex-wrap items-center justify-between gap-4 text-purple-400">
+      <ul className="flex grow flex-row flex-wrap items-center justify-between gap-4 text-purple-400 dark:text-purple-300">
         {routes.map(({ label, path }) => {
           const isActive = path === activePath;
 
@@ -36,8 +36,8 @@ export const SecondaryNav: FunctionComponent<{
               <Link
                 className={
                   isActive
-                    ? "pt-1 font-rubikMono text-lg leading-none text-purple-600"
-                    : "rounded-md px-2 py-1 hover:bg-green-100"
+                    ? "pt-1 font-rubikMono text-lg leading-none text-purple-600 dark:text-purple-200"
+                    : "rounded-md px-2 py-1 hover:bg-green-100 dark:hover:bg-purple-900"
                 }
                 href={`${indexRoute}${path}`}
                 aria-current={isActive ? "page" : undefined}
