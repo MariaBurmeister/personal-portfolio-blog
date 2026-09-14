@@ -1,11 +1,16 @@
 import { BusinessCard } from "@/components";
-import { FunctionComponent, ReactNode } from "react";
+import type { Metadata } from "next";
+import { ReactNode } from "react";
 import { SecondaryNav, NavRoute } from "./SecondaryNav";
 
-
-interface Layout {
-  children: ReactNode;
-}
+export const metadata: Metadata = {
+  title: {
+    default: "Portfolio",
+    template: "%s | Maria Burmeister",
+  },
+  description:
+    "Frontend developer portfolio — about, experience, and selected projects.",
+};
 
 const Routes: NavRoute[] = [
   { path: "", label: "About" },
@@ -13,7 +18,7 @@ const Routes: NavRoute[] = [
   { path: "/projects", label: "Projects" },
 ];
 
-const PortfolioLayout: FunctionComponent<Layout> = ({ children }) => {
+const PortfolioLayout = ({ children }: { children: ReactNode }) => {
   return (
     <main className="flex flex-wrap items-stretch gap-8 md:flex-nowrap">
       <h1 className="sr-only">Maria Burmeister | Portfolio</h1>
@@ -29,7 +34,6 @@ const PortfolioLayout: FunctionComponent<Layout> = ({ children }) => {
         <main className="overflow-scroll">{children}</main>
         <footer className="sticky bottom-0 bg-purple-100 pb-4">
           <hr />
-          {/* footer content */}
         </footer>
       </section>
     </main>

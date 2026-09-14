@@ -1,11 +1,33 @@
+import type { Metadata } from "next";
 import { Project } from "@/components/Project";
 import { getProjects } from "@/utils";
 
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "Selected GitHub projects by Maria Burmeister.",
+};
 
 export const dynamic = "force-dynamic";
 
 const Projects = async () => {
   const projects = await getProjects();
+
+  if (projects.length === 0) {
+    return (
+      <p className="px-4 py-6 font-baskervville text-purple-800">
+        No featured projects were returned from GitHub right now.{" "}
+        <a
+          href="https://github.com/MariaBurmeister"
+          target="_blank"
+          rel="noreferrer"
+          className="underline"
+        >
+          Browse them on GitHub
+        </a>
+        .
+      </p>
+    );
+  }
 
   return (
     <ul

@@ -22,7 +22,7 @@ const About: FunctionComponent = () => (
           Hi, I&apos;m Gabi!
         </h4>
         <p>
-          I&apos;m a self-thaught <strong>Frontend Engineer</strong> with a
+          I&apos;m a self-taught <strong>Frontend Engineer</strong> with a
           <strong> Graphic design </strong>
           background, and a passion for developing{" "}
           <strong>delightful UX&apos;s</strong> and{" "}
