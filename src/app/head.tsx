@@ -4,7 +4,7 @@ export default function Head() {
       <title>Maria Burmeister | Frontend Developer</title>
       <meta
         name="description"
-        content="Check out my Frontend Developer Portfolio and Blog. Contact me for your open Fontend position. mariaburmeister+work@proton.me"
+        content="Check out my Frontend Developer Portfolio and Blog. Contact me for your open Frontend position. mariaburmeister+work@proton.me"
         key="description"
       />
       <meta
@@ -13,7 +13,7 @@ export default function Head() {
       />
       <meta
         property="og:description"
-        content="Check out my Frontend Developer Portfolio and Blog. Contact me for your open Fontend position. mariaburmeister+work@proton.me"
+        content="Check out my Frontend Developer Portfolio and Blog. Contact me for your open Frontend position. mariaburmeister+work@proton.me"
       />
       <meta property="og:image" content="/apple-touch-icon.png" />
       <meta
