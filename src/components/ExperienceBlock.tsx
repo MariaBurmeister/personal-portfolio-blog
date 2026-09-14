@@ -78,12 +78,19 @@ export const ExperienceBlock: FunctionComponent<ExperienceBlockProps> = ({
 
 const ExperienceStack: FunctionComponent<{ stack: Stack }> = ({ stack }) => (
   <>
-    {stack.map(({ name, icon }, i) =>
+    {stack.map(({ name, icon, purpose }, i) =>
       icon ? (
-        <Icon key={icon + i} icon={icon} />
+        <Icon
+          key={icon + i}
+          icon={icon}
+          role="img"
+          aria-hidden={false}
+          aria-label={purpose ? `${name}, ${purpose}` : name}
+        />
       ) : (
         <span key={name} className="text-xs">
           {name}
+          {purpose ? <span className="sr-only">, {purpose}</span> : null}
         </span>
       )
     )}
