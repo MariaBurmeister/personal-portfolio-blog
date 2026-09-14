@@ -142,7 +142,7 @@ export const Steps: FunctionComponent<Steps> = ({
               stepper={prevStep}
             />
           )}
-          <main className={styleSteps}>{child}</main>
+          <div className={styleSteps}>{child}</div>
           {prevStep && (
             <StepperNext
               direction={direction}
@@ -279,7 +279,7 @@ export const VerticalSteps: FunctionComponent<Steps> = ({
               stepper={prevStep}
             />
           )}
-          <main className={styleSteps}>{child}</main>
+          <div className={styleSteps}>{child}</div>
           {nextStep && (
             <StepperNext
               direction={direction}

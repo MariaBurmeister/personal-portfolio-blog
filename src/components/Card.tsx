@@ -24,7 +24,7 @@ interface Card {
 
 // the className prop is used to apply custom styles to the Card (<article/>).
 
-// the styleContent prop is used to apply custom styles to the content (<main/>).
+// the styleContent prop is used to apply custom styles to the content area.
 
 // the footer prop is used to render content inside a <footer/> at the bottom of the card.
 // the styleFooter prop is used to apply custom styles to the footer (<footer/>).
@@ -68,7 +68,7 @@ export const Card: FunctionComponent<Card> = ({
         {titleHelp && <p className="text-xs">{titleHelp}</p>}
       </header>
       <hr className="my-1" />
-      <main className={`font-baskervville ${styleContent}`}>{children}</main>
+      <section className={`font-baskervville ${styleContent}`}>{children}</section>
       <hr className="my-1" />
       {footer && <footer className={`${styleFooter}`}>{footer}</footer>}
     </article>
