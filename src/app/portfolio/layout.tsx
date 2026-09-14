@@ -23,14 +23,14 @@ const PortfolioLayout = ({ children }: { children: ReactNode }) => {
     <main className="flex flex-wrap items-stretch gap-8 md:flex-nowrap">
       <BusinessCard className="grow md:min-w-fit md:max-w-fit" />
       <section
-        className="relative grid h-[453px] grow overflow-auto rounded-xl bg-gradient-to-b from-white to-purple-100 px-4 shadow-2xl"
+        className="relative grid h-[453px] max-h-[calc(100dvh-8rem)] grow overflow-auto rounded-xl bg-gradient-to-b from-white to-purple-100 px-4 shadow-2xl"
         style={{ gridTemplateRows: "auto 1fr auto" }}
       >
         <header className="sticky top-0 flex flex-col items-stretch gap-4 bg-white pt-4">
           <SecondaryNav indexRoute="/portfolio" routes={Routes} />
           <hr />
         </header>
-        <section className="overflow-scroll">{children}</section>
+        <section className="min-h-0 overflow-y-auto">{children}</section>
         <footer className="sticky bottom-0 bg-purple-100 pb-4">
           <hr />
         </footer>
