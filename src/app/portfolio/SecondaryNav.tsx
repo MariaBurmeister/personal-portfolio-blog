@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { usePathname, useSelectedLayoutSegment } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 import { FunctionComponent, useEffect, useState } from "react";
 

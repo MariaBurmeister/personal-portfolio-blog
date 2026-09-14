@@ -1,5 +1,5 @@
 "use client";
-import { Card, Steps } from "@/components";
+import { Card } from "@/components";
 import { useExperience } from "@/hooks/useExperience";
 import { Stack } from "@/pages/api/experience";
 import { FunctionComponent, useState } from "react";
@@ -73,8 +73,8 @@ const ExperienceBlock: FunctionComponent<ExperienceBlock> = ({
         <p>
           <span className="rounded-md bg-purple-200  py-1 px-2 text-xs">
             {startDate}
-          </span>{" "}
-          -{" "}
+          </span>
+          {" - "}
           <span className="rounded-md bg-purple-200  py-1 px-2 text-xs">
             {endDate}
           </span>
@@ -102,15 +102,13 @@ const ExperienceBlock: FunctionComponent<ExperienceBlock> = ({
           )
         )}
       </article>
-      <button
-        id="expand"
-        className="peer absolute top-0 left-0 h-full w-full opacity-0 "
-        onClick={() => setExpanded(!expanded)}
-      />
-      <label
-        htmlFor="expand"
-        className="font-standard text-xs text-purple-400 underline peer-hover:text-purple-600"
-      >
+      <label className="font-standard text-xs text-purple-400 underline peer-hover:text-purple-600">
+        <button
+          className="peer absolute top-0 left-0 h-full w-full opacity-0 "
+          onClick={() => setExpanded(!expanded)}
+        >
+          {expanded ? "show less" : "show more"}
+        </button>
         {expanded ? "show less" : "show more"}
       </label>
     </Card>
@@ -119,9 +117,9 @@ const ExperienceBlock: FunctionComponent<ExperienceBlock> = ({
 
 const ExperienceStack: FunctionComponent<{ stack: Stack }> = ({ stack }) => (
   <>
-    {stack.map(({ name, icon }) =>
+    {stack.map(({ name, icon }, i) =>
       icon ? (
-        <Icon key={icon} icon={icon} />
+        <Icon key={icon + i} icon={icon} />
       ) : (
         <span key={name} className="text-xs">
           {name}

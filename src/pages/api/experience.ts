@@ -34,7 +34,7 @@ export type Experiences = Experience[];
 export const fetcher: Fetcher<Experiences> = (url: string) =>
   fetch(url).then((res) => res.json());
 
-export default function getProjects(
+export default function getExperiences(
   req: NextApiRequest,
   res: NextApiResponse<Experiences>
 ) {
