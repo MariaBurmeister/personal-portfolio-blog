@@ -2,7 +2,7 @@ import { FunctionComponent, ReactNode } from "react";
 
 interface Card {
   rounded?: "sm" | "md" | "lg" | "xl";
-  shadow?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl";
+  shadow?: "sm" | "md" | "lg" | "xl" | "2xl";
   className?: string;
   title: string | ReactNode;
   titleHelp?: string | ReactNode;
@@ -11,25 +11,22 @@ interface Card {
   styleContent?: string;
   footer?: ReactNode;
   styleFooter?: string;
-  // clampContent?: boolean;
 }
 
-// a card is a container for content.
-// it has a title, a main content area and a footer.
+const roundedClasses = {
+  sm: "rounded-sm",
+  md: "rounded-md",
+  lg: "rounded-lg",
+  xl: "rounded-xl",
+} as const;
 
-// a title is required for accessibility reasons. Yup, even if you don't want to show it. You can hide it with the hideTitle prop.
-
-// the rounded prop is used to apply a border radius to the card.
-// the shadow prop is used to apply a box shadow to the card.
-
-// the className prop is used to apply custom styles to the Card (<article/>).
-
-// the styleContent prop is used to apply custom styles to the content area.
-
-// the footer prop is used to render content inside a <footer/> at the bottom of the card.
-// the styleFooter prop is used to apply custom styles to the footer (<footer/>).
-
-// TODO: replace <hr/> with divide tailwind class
+const shadowClasses = {
+  sm: "shadow-sm",
+  md: "shadow-md",
+  lg: "shadow-lg",
+  xl: "shadow-xl",
+  "2xl": "shadow-2xl",
+} as const;
 
 export const Card: FunctionComponent<Card> = ({
   className,
@@ -42,13 +39,12 @@ export const Card: FunctionComponent<Card> = ({
   styleContent,
   footer,
   styleFooter,
-  // clampContent = false,
 }) => {
   return (
     <article
       className={`
       relative 
-      rounded ${rounded ?? `rounded-${rounded}`} 
+      ${rounded ? roundedClasses[rounded] : "rounded"}
       border border-purple-900 
       bg-gradient-to-b from-white to-purple-100 
       p-4 
@@ -57,7 +53,7 @@ export const Card: FunctionComponent<Card> = ({
       dark:from-slate-900
       dark:to-purple-950
       dark:text-purple-100
-      ${shadow ? `shadow-${shadow}` : ""}  shadow-purple-200 dark:shadow-purple-950/50
+      ${shadowClasses[shadow]} shadow-purple-200 dark:shadow-purple-950/50
       ${className}
     `}
     >
