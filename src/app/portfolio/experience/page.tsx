@@ -1,5 +1,4 @@
-import { ExperienceBlock } from "@/components/ExperienceBlock";
-import { VerticalSteps } from "@/components/Steps";
+import { ExperienceBlock, VerticalSteps } from "@/components";
 import { getExperiences } from "@/utils";
 import type { Metadata } from "next";
 
