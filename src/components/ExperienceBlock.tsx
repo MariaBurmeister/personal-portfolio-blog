@@ -1,0 +1,91 @@
+"use client";
+
+import { Card } from "@/components";
+import { Stack } from "@/utils";
+import { FunctionComponent, useState } from "react";
+import { Icon } from "@iconify/react";
+
+interface ExperienceBlockProps {
+  title: string;
+  company: string;
+  location: string;
+  startDate: string;
+  endDate: string;
+  description: string[];
+  stack: Stack;
+}
+
+export const ExperienceBlock: FunctionComponent<ExperienceBlockProps> = ({
+  title,
+  company,
+  startDate,
+  endDate,
+  description,
+  stack,
+}) => {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <Card
+      title={
+        <>
+          {title} -{" "}
+          <span className="rounded-md bg-green-100 px-2 py-1">@ {company}</span>
+        </>
+      }
+      titleHelp={
+        <p>
+          <span className="rounded-md bg-purple-200 px-2 py-1 text-xs">
+            {startDate}
+          </span>
+          {" - "}
+          <span className="rounded-md bg-purple-200 px-2 py-1 text-xs">
+            {endDate}
+          </span>
+        </p>
+      }
+      shadow="2xl"
+      className="mx-6 max-w-[600px]"
+      styleContent="relative"
+      footer={<ExperienceStack stack={stack} />}
+      styleFooter="flex justify-between flex-wrap grow items-center pr-2 pt-1"
+    >
+      <article className="flex flex-col gap-2 overflow-hidden px-2 pt-2 font-baskervville">
+        {description.map((desc, i) =>
+          i === 0 ? (
+            <p
+              className={expanded ? "line-clamp-none" : "line-clamp-2"}
+              key={title + i}
+            >
+              {desc}
+            </p>
+          ) : (
+            expanded && <p key={title + i}>{desc}</p>
+          )
+        )}
+      </article>
+      <button
+        type="button"
+        className="font-standard text-xs text-purple-400 underline hover:text-purple-600"
+        aria-expanded={expanded}
+        onClick={() => setExpanded(!expanded)}
+      >
+        {expanded ? "show less" : "show more"}
+      </button>
+    </Card>
+  );
+};
+
+const ExperienceStack: FunctionComponent<{ stack: Stack }> = ({ stack }) => (
+  <>
+    {stack.map(({ name, icon }, i) =>
+      icon ? (
+        <Icon key={icon + i} icon={icon} />
+      ) : (
+        <span key={name} className="text-xs">
+          {name}
+        </span>
+      )
+    )}
+  </>
+);

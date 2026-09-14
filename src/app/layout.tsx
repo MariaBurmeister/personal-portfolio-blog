@@ -1,31 +1,70 @@
+import {
+  Baskervville,
+  Plaster,
+  Rubik_Mono_One,
+} from "next/font/google";
 import { AnalyticsWrapper, MainNav } from "@/components";
-import { FunctionComponent, ReactNode } from "react";
+import type { Metadata, Viewport } from "next";
+import { ReactNode } from "react";
 import "./globals.scss";
 
-interface Layout {
-  children: ReactNode;
-}
+const plaster = Plaster({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-plaster",
+});
 
-const RootLayout: FunctionComponent<Layout> = ({ children }) => {
+const rubikMono = Rubik_Mono_One({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-rubik-mono",
+});
+
+const baskervville = Baskervville({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-baskervville",
+});
+
+const siteDescription =
+  "Check out my Frontend Developer Portfolio and Blog. Contact me for your open Frontend position. mariaburmeister+work@proton.me";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://mariaburmeister.com"),
+  title: "Maria Burmeister | Frontend Developer",
+  description: siteDescription,
+  openGraph: {
+    title: "Maria Burmeister | Frontend Developer",
+    description: siteDescription,
+    images: ["/apple-touch-icon.png"],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#bbf7d0" },
+    { media: "(prefers-color-scheme: light)", color: "#bbf7d0" },
+    { color: "#bbf7d0" },
+  ],
+};
+
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Plaster&family=Rubik+Mono+One&family=Baskervville&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="relative flex min-h-[100dvh] flex-col gap-8 bg-gradient-to-r from-green-200 to-purple-500 p-6 md:justify-center  md:px-16 lg:px-36">
+    <html
+      lang="en"
+      className={`${plaster.variable} ${rubikMono.variable} ${baskervville.variable}`}
+    >
+      <body className="relative flex min-h-[100dvh] flex-col gap-8 bg-gradient-to-r from-green-200 to-purple-500 p-6 md:justify-center md:px-16 lg:px-36">
         {children}
         <AnalyticsWrapper />
         <footer className="sticky bottom-1 shrink rounded-xl bg-white px-2 shadow-2xl">
@@ -34,6 +73,4 @@ const RootLayout: FunctionComponent<Layout> = ({ children }) => {
       </body>
     </html>
   );
-};
-
-export default RootLayout;
+}

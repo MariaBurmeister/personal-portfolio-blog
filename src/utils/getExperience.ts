@@ -1,15 +1,3 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import { Fetcher } from "swr";
-
-interface ProjectData {
-  id: number;
-  name: string;
-  full_name: string;
-  description: string;
-  html_url: string;
-  language: string;
-}
-
 export interface Experience {
   title: string;
   company: string;
@@ -17,7 +5,6 @@ export interface Experience {
   startDate: string;
   endDate: string;
   description: string[];
-  projects?: ProjectData[];
   stack: Stack;
 }
 
@@ -30,16 +17,6 @@ export interface Technology {
 }
 
 export type Experiences = Experience[];
-
-export const fetcher: Fetcher<Experiences> = (url: string) =>
-  fetch(url).then((res) => res.json());
-
-export default function getExperiences(
-  req: NextApiRequest,
-  res: NextApiResponse<Experiences>
-) {
-  res.status(200).json(experiences);
-}
 
 const experiences: Experiences = [
   {
@@ -59,51 +36,19 @@ const experiences: Experiences = [
       `This was a valuable learning period, which led to a permanent Junior Engineering position at the same company.`,
     ],
     stack: [
-      {
-        purpose: "Frontend",
-        name: "React",
-        icon: "mdi:react",
-      },
-      {
-        purpose: "Frontend",
-        name: "Bootstrap",
-        icon: "mdi:bootstrap",
-      },
+      { purpose: "Frontend", name: "React", icon: "mdi:react" },
+      { purpose: "Frontend", name: "Bootstrap", icon: "mdi:bootstrap" },
       {
         purpose: "Frontend & Backend",
         name: "JavaScript",
         icon: "mdi:language-javascript",
       },
-      {
-        purpose: "Backend",
-        name: "Node.js",
-        icon: "mdi:nodejs",
-      },
-      {
-        purpose: "Database",
-        name: "Graphql",
-        icon: "mdi:graphql",
-      },
-      {
-        purpose: "database",
-        name: "Firebase",
-        icon: "mdi:firebase",
-      },
-      {
-        purpose: "CI/CD",
-        name: "AWS",
-        icon: "mdi:aws",
-      },
-      {
-        purpose: "Deployment",
-        name: "AWS",
-        icon: "mdi:aws",
-      },
-      {
-        purpose: "Testing",
-        name: "Jest",
-        icon: "",
-      },
+      { purpose: "Backend", name: "Node.js", icon: "mdi:nodejs" },
+      { purpose: "Database", name: "Graphql", icon: "mdi:graphql" },
+      { purpose: "database", name: "Firebase", icon: "mdi:firebase" },
+      { purpose: "CI/CD", name: "AWS", icon: "mdi:aws" },
+      { purpose: "Deployment", name: "AWS", icon: "mdi:aws" },
+      { purpose: "Testing", name: "Jest", icon: "" },
     ],
   },
   {
@@ -123,68 +68,36 @@ const experiences: Experiences = [
         as well as the design of some of the features for which I was responsible.`,
       `Ocasionally, I have also contributed to the backend of the platform, which is built with Node.js and TypeScript.`,
     ],
-    projects: [],
     stack: [
-      {
-        purpose: "Frontend",
-        name: "React",
-        icon: "mdi:react",
-      },
+      { purpose: "Frontend", name: "React", icon: "mdi:react" },
       {
         purpose: "Frontend & Backend",
         name: "TypeScript",
         icon: "mdi:language-typescript",
       },
-      {
-        purpose: "Backend",
-        name: "Node.js",
-        icon: "mdi:nodejs",
-      },
-      {
-        purpose: "Database",
-        name: "Graphql",
-        icon: "mdi:graphql",
-      },
-      {
-        purpose: "CI/CD",
-        name: "AWS",
-        icon: "mdi:aws",
-      },
-      {
-        purpose: "Testing",
-        name: "Jest",
-        icon: "",
-      },
-      {
-        purpose: "E2E Testing",
-        name: "Cypress",
-        icon: "",
-      },
-      {
-        purpose: "Design",
-        name: "Figma",
-        icon: "ph:figma-logo",
-      },
-      {
-        purpose: "Project Management",
-        name: "Jira",
-        icon: "mdi:jira",
-      },
-      {
-        purpose: "Communication",
-        name: "Slack",
-        icon: "mdi:slack",
-      },
-      {
-        purpose: "Colaboration",
-        name: "Miro",
-        icon: "",
-      },
-      {
-        purpose: "Management Framework",
-        name: "Scrum",
-        icon: "",
-      },
+      { purpose: "Backend", name: "Node.js", icon: "mdi:nodejs" },
+      { purpose: "Database", name: "Graphql", icon: "mdi:graphql" },
+      { purpose: "CI/CD", name: "AWS", icon: "mdi:aws" },
+      { purpose: "Testing", name: "Jest", icon: "" },
+      { purpose: "E2E Testing", name: "Cypress", icon: "" },
+      { purpose: "Design", name: "Figma", icon: "ph:figma-logo" },
+      { purpose: "Project Management", name: "Jira", icon: "mdi:jira" },
+      { purpose: "Communication", name: "Slack", icon: "mdi:slack" },
+      { purpose: "Colaboration", name: "Miro", icon: "" },
+      { purpose: "Management Framework", name: "Scrum", icon: "" },
     ],
   },
 ];
+
+const formatDate = (value: string) =>
+  new Date(value).toLocaleDateString("en-GB", {
+    year: "numeric",
+    month: "short",
+  });
+
+export const getExperiences = (): Experiences =>
+  experiences.map((experience) => ({
+    ...experience,
+    startDate: formatDate(experience.startDate),
+    endDate: formatDate(experience.endDate),
+  }));

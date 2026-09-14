@@ -65,7 +65,7 @@ export const Steps: FunctionComponent<Steps> = ({
   };
 
   const hasReachedEnd = (
-    container: RefObject<HTMLDivElement>,
+    container: RefObject<HTMLDivElement | null>,
     offset: number
   ) => {
     if (!container.current) return;
@@ -76,7 +76,7 @@ export const Steps: FunctionComponent<Steps> = ({
   };
 
   const hasReachedStart = (
-    container: RefObject<HTMLDivElement>,
+    container: RefObject<HTMLDivElement | null>,
     offset: number
   ) => {
     if (!container.current) return;
@@ -199,7 +199,7 @@ export const VerticalSteps: FunctionComponent<Steps> = ({
   };
 
   const hasReachedEnd = (
-    container: RefObject<HTMLDivElement>,
+    container: RefObject<HTMLDivElement | null>,
     offset: number
   ) => {
     if (!container.current) return;
@@ -210,7 +210,7 @@ export const VerticalSteps: FunctionComponent<Steps> = ({
   };
 
   const hasReachedStart = (
-    container: RefObject<HTMLDivElement>,
+    container: RefObject<HTMLDivElement | null>,
     offset: number
   ) => {
     if (!container.current) return;
