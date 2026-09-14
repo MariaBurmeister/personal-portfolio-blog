@@ -1,4 +1,4 @@
-import { ExperienceBlock, VerticalSteps } from "@/components";
+import { ExperienceBlock, Timeline } from "@/components";
 import { getExperiences } from "@/utils";
 import type { Metadata } from "next";
 
@@ -7,8 +7,11 @@ export const metadata: Metadata = {
   description: "Professional experience and tech stack.",
 };
 
-const TimelineStepper = () => (
-  <hr className="mx-auto my-0 h-full w-0 grow border border-purple-900 py-0" />
+const TimelineConnector = () => (
+  <span
+    aria-hidden
+    className="block h-full min-h-11 w-0 border border-purple-900 dark:border-purple-300"
+  />
 );
 
 const Experience = () => {
@@ -17,14 +20,11 @@ const Experience = () => {
   return (
     <>
       <h2 className="sr-only">Experience</h2>
-      <VerticalSteps
-        nextStep={<TimelineStepper />}
-        prevStep={<TimelineStepper />}
-      >
+      <Timeline connector={<TimelineConnector />}>
         {experiences.map((experience, i) => (
           <ExperienceBlock key={`${experience.company}-${i}`} {...experience} />
         ))}
-      </VerticalSteps>
+      </Timeline>
     </>
   );
 };

@@ -18,7 +18,6 @@ interface ExperienceBlockProps {
 export const ExperienceBlock: FunctionComponent<ExperienceBlockProps> = ({
   title,
   company,
-  location,
   startDate,
   endDate,
   description,
@@ -35,17 +34,14 @@ export const ExperienceBlock: FunctionComponent<ExperienceBlockProps> = ({
         </>
       }
       titleHelp={
-        <span className="flex flex-col items-end gap-1 text-right">
-          <span>
-            <span className="rounded-md bg-purple-200 px-2 py-1 text-xs dark:bg-purple-900 dark:text-purple-100">
-              {startDate}
-            </span>
-            {" - "}
-            <span className="rounded-md bg-purple-200 px-2 py-1 text-xs dark:bg-purple-900 dark:text-purple-100">
-              {endDate}
-            </span>
+        <span>
+          <span className="rounded-md bg-purple-200 px-2 py-1 text-xs dark:bg-purple-900 dark:text-purple-100 text-nowrap">
+            {startDate}
           </span>
-          <span className="text-purple-500 dark:text-purple-300">{location}</span>
+          {" - "}
+          <span className="rounded-md bg-purple-200 px-2 py-1 text-xs dark:bg-purple-900 dark:text-purple-100 text-nowrap">
+            {endDate}
+          </span>
         </span>
       }
       shadow="2xl"

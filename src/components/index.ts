@@ -6,6 +6,7 @@ export { ExperienceBlock } from "./ExperienceBlock";
 export { LinkButton } from "./LinkButton";
 export { Loader } from "./Loader";
 export { MainNav } from "./MainNav";
-export { Steps, VerticalSteps } from "./Steps";
+export { Stepper } from "./Stepper";
+export { Timeline } from "./Timeline";
 export { ThemeProvider } from "./ThemeProvider";
 export { ThemeToggle } from "./ThemeToggle";

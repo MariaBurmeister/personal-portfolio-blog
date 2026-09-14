@@ -30,7 +30,7 @@ const PortfolioLayout = ({ children }: { children: ReactNode }) => {
           <SecondaryNav indexRoute="/portfolio" routes={Routes} />
           <hr className="border-purple-200 dark:border-purple-800" />
         </header>
-        <section className="min-h-0 overflow-y-auto">{children}</section>
+        <section className="min-h-0 min-w-0 overflow-y-auto">{children}</section>
         <footer className="sticky bottom-0 bg-purple-100 pb-4 dark:bg-purple-950">
           <hr className="border-purple-200 dark:border-purple-800" />
         </footer>
