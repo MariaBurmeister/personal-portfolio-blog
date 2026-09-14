@@ -2,6 +2,7 @@ import { ExperienceBlock } from "@/components/ExperienceBlock";
 import { VerticalSteps } from "@/components/Steps";
 import { getExperiences } from "@/utils";
 
+
 const TimelineStepper = () => (
   <hr className="mx-auto my-0 h-full w-0 grow border border-purple-900 py-0" />
 );

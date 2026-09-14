@@ -2,6 +2,7 @@ import { BusinessCard } from "@/components";
 import { FunctionComponent, ReactNode } from "react";
 import { SecondaryNav, NavRoute } from "./SecondaryNav";
 
+
 interface Layout {
   children: ReactNode;
 }

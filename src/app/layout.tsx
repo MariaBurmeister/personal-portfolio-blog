@@ -8,6 +8,7 @@ import type { Metadata, Viewport } from "next";
 import { ReactNode } from "react";
 import "./globals.scss";
 
+
 const plaster = Plaster({
   weight: "400",
   subsets: ["latin"],

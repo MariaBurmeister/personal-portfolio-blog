@@ -1,6 +1,7 @@
 import { Project } from "@/components/Project";
 import { getProjects } from "@/utils";
 
+
 export const dynamic = "force-dynamic";
 
 const Projects = async () => {

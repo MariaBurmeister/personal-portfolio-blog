@@ -1,5 +1,6 @@
 import { FunctionComponent } from "react";
 
+
 const Home: FunctionComponent = () => {
   return (
     <main className="bottom-[60dvh] my-auto self-center md:my-0">

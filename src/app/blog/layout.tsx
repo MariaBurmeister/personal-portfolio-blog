@@ -1,5 +1,6 @@
 import { FunctionComponent, ReactNode } from "react";
 
+
 interface Layout {
   children: ReactNode;
 }
