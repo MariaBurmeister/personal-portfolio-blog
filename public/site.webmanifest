@@ -4,7 +4,7 @@
   "id": "/",
   "start_url": "/?utm_source=homescreen",
   "scope": "/",
-  "description": "Check out my Frontend Developer Portfolio and Blog. Contact me for your open Frontend position. mariaburmeister+work@proton.me",
+  "description": "Check out my Frontend Developer Portfolio. Contact me for your open Frontend position. mariaburmeister+work@proton.me",
   "lang": "en",
   "dir": "ltr",
   "orientation": "portrait",
@@ -93,13 +93,6 @@
       "short_name": "Portfolio",
       "description": "View Maria Burmeister's portfolio",
       "url": "/portfolio?utm_source=homescreen",
-      "icons": [{ "src": "/favicon.svg", "sizes": "192x192" }]
-    },
-    {
-      "name": "Open Blog",
-      "short_name": "Blog",
-      "description": "View Maria Burmeister's blog",
-      "url": "/blog?utm_source=homescreen",
       "icons": [{ "src": "/favicon.svg", "sizes": "192x192" }]
     }
   ],

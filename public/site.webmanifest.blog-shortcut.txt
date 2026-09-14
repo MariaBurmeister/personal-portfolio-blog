@@ -1,0 +1,9 @@
+# Parked PWA shortcut (JSON cannot comment). Restore into site.webmanifest shortcuts when blog ships.
+#
+# {
+#   "name": "Open Blog",
+#   "short_name": "Blog",
+#   "description": "View Maria Burmeister's blog",
+#   "url": "/blog?utm_source=homescreen",
+#   "icons": [{ "src": "/favicon.svg", "sizes": "192x192" }]
+# }

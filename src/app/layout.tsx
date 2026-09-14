@@ -28,7 +28,7 @@ const baskervville = Baskervville({
 });
 
 const siteDescription =
-  "Check out my Frontend Developer Portfolio and Blog. Contact me for your open Frontend position. mariaburmeister+work@proton.me";
+  "Check out my Frontend Developer Portfolio. Contact me for your open Frontend position. mariaburmeister+work@proton.me";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mariaburmeister.com"),
@@ -68,7 +68,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="relative flex min-h-[100dvh] flex-col gap-8 bg-gradient-to-r from-green-200 to-purple-500 p-6 md:justify-center md:px-16 lg:px-36">
         {children}
         <AnalyticsWrapper />
-        <footer className="sticky bottom-1 shrink rounded-xl bg-white px-2 shadow-2xl">
+        <footer className="sticky bottom-1 shrink">
           <MainNav />
         </footer>
       </body>
