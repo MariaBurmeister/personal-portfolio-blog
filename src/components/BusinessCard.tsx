@@ -71,15 +71,23 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
         </a>
       </section>
       <section className="mt-4 flex flex-row flex-wrap justify-around gap-2 text-purple-800">
-        <a href="https://github.com/MariaBurmeister" target="_blank">
+        <a
+          href="https://github.com/MariaBurmeister"
+          target="_blank"
+          rel="noreferrer"
+        >
           <GitHub className="inline text-xl" />
           <span className="sr-only">GitHub</span>
         </a>
-        <a href="https://www.linkedin.com/in/mariaburmeister/" target="_blank">
+        <a
+          href="https://www.linkedin.com/in/mariaburmeister/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <LinkedIn className="inline text-xl" />
           <span className="sr-only">LinkedIn</span>
         </a>
-        <a href="https://mariaburmeister.com" target="_blank">
+        <a href="https://mariaburmeister.com" target="_blank" rel="noreferrer">
           <Website className="inline text-xl" />
           <span className="sr-only">This Website</span>
         </a>
