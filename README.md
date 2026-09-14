@@ -12,9 +12,11 @@ Live site: [mariaburmeister.com](https://mariaburmeister.com)
 
 ## Getting started
 
+Requires [pnpm](https://pnpm.io/).
+
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
@@ -32,13 +34,13 @@ GITHUB_TOKEN=your-fine-grained-github-token
 
 ### Scripts
 
-| Command        | Description              |
-| -------------- | ------------------------ |
-| `npm run dev`  | Development server       |
-| `npm run build`| Production build         |
-| `npm run start`| Serve production build   |
-| `npm run lint` | ESLint                   |
+| Command         | Description            |
+| --------------- | ---------------------- |
+| `pnpm dev`      | Development server     |
+| `pnpm build`    | Production build       |
+| `pnpm start`    | Serve production build |
+| `pnpm lint`     | ESLint                 |
 
 ## Deploy
 
-Designed for [Vercel](https://vercel.com). Push to GitHub and import the repo, or use the Vercel CLI. Ensure `GITHUB_USERNAME` / `GITHUB_TOKEN` are configured for the Projects page.
+Designed for [Vercel](https://vercel.com). Push to GitHub and import the repo, or use the Vercel CLI. Ensure `GITHUB_USERNAME` / `GITHUB_TOKEN` are configured for the Projects page, and set the install command to `pnpm install` if it is not detected automatically.
