@@ -5,8 +5,6 @@ import {
   ReactNode,
   Children,
   useRef,
-  UIEvent,
-  useEffect,
   useState,
   RefObject,
   MouseEventHandler,
@@ -36,28 +34,13 @@ export const Steps: FunctionComponent<Steps> = ({
   const [isScrollEnd, setIsScrollEnd] = useState(false);
   const [isScrollStart, setIsScrollStart] = useState(true);
 
-  const [isScrolling, setIsScrolling] = useState(false);
+  const syncScrollEdges = () => {
+    setIsScrollStart(!!hasReachedStart(container, 15));
+    setIsScrollEnd(!!hasReachedEnd(container, 15));
+  };
 
-  useEffect(() => {
-    if (!container.current) return;
-    container.current.addEventListener("scrollstart", () => {
-      setIsScrolling(true);
-    });
-    container.current.addEventListener("scrollend", () => {
-      setIsScrolling(false);
-    });
-  }, [container]);
-
-  const handleScroll = (e: UIEvent<HTMLDivElement>) => {
-    if (hasReachedEnd(container, 15)) {
-      setIsScrollEnd(true);
-      return;
-    } else if (hasReachedStart(container, 15)) {
-      setIsScrollStart(true);
-      return;
-    }
-    setIsScrollEnd(false);
-    setIsScrollStart(false);
+  const handleScroll = () => {
+    syncScrollEdges();
   };
 
   const hasReachedEnd = (
@@ -79,21 +62,34 @@ export const Steps: FunctionComponent<Steps> = ({
     return container.current.scrollLeft <= offset;
   };
 
-  const scrollAhead = () => {
-    if (!container.current) return;
-    container.current.scrollBy({
-      left: container.current.offsetWidth,
-      behavior: "smooth",
+  const getCurrentPaneIndex = () => {
+    if (!container.current) return 0;
+    const panes = Array.from(container.current.children) as HTMLElement[];
+    const { scrollLeft } = container.current;
+    let best = 0;
+    let bestDist = Infinity;
+    panes.forEach((pane, i) => {
+      const dist = Math.abs(pane.offsetLeft - scrollLeft);
+      if (dist < bestDist) {
+        bestDist = dist;
+        best = i;
+      }
     });
+    return best;
   };
 
-  const scrollBack = () => {
+  const scrollToPane = (index: number) => {
     if (!container.current) return;
-    container.current.scrollBy({
-      left: -container.current.offsetWidth,
-      behavior: "smooth",
-    });
+    const panes = Array.from(container.current.children) as HTMLElement[];
+    const pane = panes[Math.max(0, Math.min(index, panes.length - 1))];
+    if (!pane) return;
+    // Instant scroll: native smooth + mandatory snap fails backward in Chromium.
+    container.current.scrollTo({ left: pane.offsetLeft, behavior: "auto" });
+    syncScrollEdges();
   };
+
+  const scrollAhead = () => scrollToPane(getCurrentPaneIndex() + 1);
+  const scrollBack = () => scrollToPane(getCurrentPaneIndex() - 1);
 
   return (
     <section
@@ -128,7 +124,7 @@ export const Steps: FunctionComponent<Steps> = ({
           ${styleSteps}
           `}
         >
-          {nextStep && (
+          {prevStep && (
             <StepperPrev
               direction={direction}
               isScrollStart={isScrollStart}
@@ -137,7 +133,7 @@ export const Steps: FunctionComponent<Steps> = ({
             />
           )}
           <div className={styleSteps}>{child}</div>
-          {prevStep && (
+          {nextStep && (
             <StepperNext
               direction={direction}
               isScrollEnd={isScrollEnd}
@@ -164,28 +160,13 @@ export const VerticalSteps: FunctionComponent<Steps> = ({
   const [isScrollEnd, setIsScrollEnd] = useState(false);
   const [isScrollStart, setIsScrollStart] = useState(true);
 
-  const [isScrolling, setIsScrolling] = useState(false);
+  const syncScrollEdges = () => {
+    setIsScrollStart(!!hasReachedStart(container, 150));
+    setIsScrollEnd(!!hasReachedEnd(container, 150));
+  };
 
-  useEffect(() => {
-    if (!container.current) return;
-    container.current.addEventListener("scrollstart", () => {
-      setIsScrolling(true);
-    });
-    container.current.addEventListener("scrollend", () => {
-      setIsScrolling(false);
-    });
-  }, [container]);
-
-  const handleScroll = (e: UIEvent<HTMLDivElement>) => {
-    if (hasReachedEnd(container, 150)) {
-      setIsScrollEnd(true);
-      return;
-    } else if (hasReachedStart(container, 150)) {
-      setIsScrollStart(true);
-      return;
-    }
-    setIsScrollEnd(false);
-    setIsScrollStart(false);
+  const handleScroll = () => {
+    syncScrollEdges();
   };
 
   const hasReachedEnd = (
@@ -207,21 +188,33 @@ export const VerticalSteps: FunctionComponent<Steps> = ({
     return container.current.scrollTop <= offset;
   };
 
-  const scrollAhead = () => {
-    if (!container.current) return;
-    container.current.scrollBy({
-      top: container.current.offsetHeight,
-      behavior: "smooth",
+  const getCurrentPaneIndex = () => {
+    if (!container.current) return 0;
+    const panes = Array.from(container.current.children) as HTMLElement[];
+    const { scrollTop } = container.current;
+    let best = 0;
+    let bestDist = Infinity;
+    panes.forEach((pane, i) => {
+      const dist = Math.abs(pane.offsetTop - scrollTop);
+      if (dist < bestDist) {
+        bestDist = dist;
+        best = i;
+      }
     });
+    return best;
   };
 
-  const scrollBack = () => {
+  const scrollToPane = (index: number) => {
     if (!container.current) return;
-    container.current.scrollBy({
-      top: -container.current.offsetHeight,
-      behavior: "smooth",
-    });
+    const panes = Array.from(container.current.children) as HTMLElement[];
+    const pane = panes[Math.max(0, Math.min(index, panes.length - 1))];
+    if (!pane) return;
+    container.current.scrollTo({ top: pane.offsetTop, behavior: "auto" });
+    syncScrollEdges();
   };
+
+  const scrollAhead = () => scrollToPane(getCurrentPaneIndex() + 1);
+  const scrollBack = () => scrollToPane(getCurrentPaneIndex() - 1);
 
   return (
     <section
@@ -286,22 +279,14 @@ const StepperNext: FunctionComponent<{
   direction?: "horizontal" | "vertical";
   scrollAhead: MouseEventHandler<HTMLButtonElement>;
   isScrollEnd: boolean;
-  isScrolling?: boolean;
   stepper?: ReactNode | string;
-}> = ({
-  direction = "horizontal",
-  isScrollEnd,
-  isScrolling,
-  stepper,
-  scrollAhead,
-}) => {
-  const isHorizontal = direction === "horizontal";
-
+}> = ({ isScrollEnd, stepper, scrollAhead }) => {
   const useIcon = typeof stepper === "string";
 
   return (
     <button
-      className={isScrollEnd || isScrolling ? "grow opacity-0" : "grow"}
+      type="button"
+      className={isScrollEnd ? "grow opacity-0" : "grow"}
       onClick={scrollAhead}
       disabled={isScrollEnd}
     >
@@ -322,16 +307,14 @@ const StepperPrev: FunctionComponent<{
   direction?: "horizontal" | "vertical";
   scrollBack: MouseEventHandler<HTMLButtonElement>;
   isScrollStart: boolean;
-  isScrolling?: boolean;
   stepper?: ReactNode | string;
-}> = ({ direction, isScrollStart, isScrolling, stepper, scrollBack }) => {
-  const isHorizontal = direction === "horizontal";
-
+}> = ({ isScrollStart, stepper, scrollBack }) => {
   const useIcon = typeof stepper === "string";
 
   return (
     <button
-      className={isScrollStart || isScrolling ? "grow opacity-0" : "grow"}
+      type="button"
+      className={isScrollStart ? "grow opacity-0" : "grow"}
       onClick={scrollBack}
       disabled={isScrollStart}
     >
