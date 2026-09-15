@@ -6,8 +6,9 @@ import {
   BsFillGeoAltFill as Location,
   BsGithub as GitHub,
   BsLinkedin as LinkedIn,
-  BsGlobe2 as Website,
 } from "react-icons/bs";
+
+const CONTACT_EMAIL = "mariaburmeister+work@mariaburmeister.com";
 
 export const BusinessCard: FunctionComponent<{ className: string }> = ({
   className,
@@ -52,7 +53,7 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
           Burmeister
         </h1>
         <hr />
-        <h2 className="truncate text-left text-purple-300 dark:text-purple-400">
+        <h2 className="mt-1 text-left text-sm leading-snug text-purple-400 dark:text-purple-400">
           Frontend Developer
         </h2>
       </header>
@@ -62,7 +63,7 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
           <Location className="inline align-baseline text-xs" /> Hamburg - De
         </p>
         <a
-          href="mailto:mariaburmeister+work@mariaburmeister.com"
+          href={`mailto:${CONTACT_EMAIL}`}
           className="self-center truncate whitespace-normal leading-tight text-purple-800 underline hover:text-green-600 dark:text-purple-200 dark:hover:text-green-300"
         >
           maria
@@ -92,10 +93,6 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
         >
           <LinkedIn className="inline text-xl" />
           <span className="sr-only">LinkedIn</span>
-        </a>
-        <a href="https://mariaburmeister.com" target="_blank" rel="noreferrer">
-          <Website className="inline text-xl" />
-          <span className="sr-only">This Website</span>
         </a>
       </section>
     </section>

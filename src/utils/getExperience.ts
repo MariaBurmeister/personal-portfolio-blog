@@ -1,5 +1,7 @@
 export interface Experience {
   title: string;
+  /** Small-caps progression line, e.g. "Junior → Mid-level". */
+  level?: string;
   company: string;
   location: string;
   /** ISO date (YYYY-MM-DD). */
@@ -26,7 +28,8 @@ export type Experiences = Experience[];
 const experiences: Experiences = [
   {
     title: "Frontend Developer",
-    company: "Craftboxx",
+    level: "Junior → Mid-level",
+    company: "Craftboxx GmbH",
     location: "Hamburg, Germany",
     startDate: "2023-05-01",
     description: [
@@ -55,6 +58,7 @@ const experiences: Experiences = [
   },
   {
     title: "Frontend Developer",
+    level: "Intern → Junior",
     company: "Claimsforce",
     location: "Hamburg, Germany",
     startDate: "2021-02-01",

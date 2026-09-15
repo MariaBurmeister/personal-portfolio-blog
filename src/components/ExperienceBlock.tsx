@@ -7,6 +7,7 @@ import { Icon } from "@iconify/react";
 
 interface ExperienceBlockProps {
   title: string;
+  level?: string;
   company: string;
   location: string;
   startDate: string;
@@ -17,6 +18,7 @@ interface ExperienceBlockProps {
 
 export const ExperienceBlock: FunctionComponent<ExperienceBlockProps> = ({
   title,
+  level,
   company,
   startDate,
   endDate,
@@ -27,12 +29,15 @@ export const ExperienceBlock: FunctionComponent<ExperienceBlockProps> = ({
 
   return (
     <Card
-    styleHeader="flex-wrap"
-      styleTitle="flex flex-col basis-auto"
+      styleHeader="flex-wrap"
+      styleTitle="flex flex-col gap-1 basis-auto"
       title={
         <>
-          <span className="text-nowrap">{title}</span>
-          <span className="rounded-md font-light text-sm text-muted-foreground text-purple-500 dark:text-green-200">@{company}</span>
+          <span className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-purple-500 dark:text-purple-300">
+            {title}
+            {level ? ` · ${level}` : null}
+          </span>
+          <span>{company}</span>
         </>
       }
       titleHelp={
