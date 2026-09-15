@@ -3,14 +3,26 @@ import { AboutFaceIcon } from "./AboutFaceIcon";
 
 const CONTACT_EMAIL = "mariaburmeister+work@mariaburmeister.com";
 
+const emailButtonClassName =
+  "border-none bg-gradient-to-b from-purple-200 to-purple-500 px-4 py-1 text-green-100 shadow-lg active:from-purple-500 active:to-purple-200";
+
 export function AboutSection() {
   return (
     <>
       <h2 className="sr-only">About</h2>
       <Stepper
-        className="py-4 text-center text-lg text-slate-600 dark:text-slate-300"
+        className="h-full min-h-0 text-center text-lg text-slate-600 dark:text-slate-300"
+        styleSteps="pb-16"
         nextStep="chevron"
         prevStep="chevron"
+        overlay={
+          <LinkButton
+            className={emailButtonClassName}
+            href={`mailto:${CONTACT_EMAIL}`}
+          >
+            email me
+          </LinkButton>
+        }
       >
         <h4 className="text-2xl font-bold text-purple-300 dark:text-purple-200">
           <AboutFaceIcon /> Hi, I&apos;m Gabi!
@@ -48,14 +60,6 @@ export function AboutSection() {
           I&apos;m currently looking for a new opportunity, so if you have a
           position for which you think I would be a good fit, please feel free
           to reach out!
-        </p>
-        <p>
-          <LinkButton
-            className="border-none bg-gradient-to-b from-purple-200 to-purple-500 px-4 py-1 text-green-100 active:from-purple-500 active:to-purple-200"
-            href={`mailto:${CONTACT_EMAIL}`}
-          >
-            email me
-          </LinkButton>
         </p>
       </Stepper>
     </>

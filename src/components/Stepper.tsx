@@ -20,6 +20,8 @@ interface StepperProps {
   /** Control content, or a string to use the default chevron. Omit to hide. */
   nextStep?: ReactNode | string;
   prevStep?: ReactNode | string;
+  /** Floated over the pane scroller (e.g. a persistent CTA). */
+  overlay?: ReactNode;
 }
 
 const chevronClassName =
@@ -60,6 +62,7 @@ export const Stepper: FunctionComponent<StepperProps> = ({
   children,
   nextStep,
   prevStep,
+  overlay,
 }) => {
   const childrenArray = Children.toArray(children);
   const {
@@ -93,14 +96,21 @@ export const Stepper: FunctionComponent<StepperProps> = ({
           {prev}
         </StepControl>
       )}
-      <div
-        onScroll={handleScroll}
-        ref={container}
-        className="flex min-h-0 min-w-0 flex-1 snap-x snap-mandatory flex-row items-center overflow-x-auto overflow-y-hidden"
-      >
-        {childrenArray.map((child, index) =>
-          withPaneProps(child, index, styleSteps)
-        )}
+      <div className="relative min-h-0 min-w-0 flex-1">
+        <div
+          onScroll={handleScroll}
+          ref={container}
+          className="flex h-full min-h-0 min-w-0 snap-x snap-mandatory flex-row items-center overflow-x-auto overflow-y-hidden"
+        >
+          {childrenArray.map((child, index) =>
+            withPaneProps(child, index, styleSteps)
+          )}
+        </div>
+        {overlay ? (
+          <div className="absolute bottom-5 left-1/2 z-10 -translate-x-1/2">
+            {overlay}
+          </div>
+        ) : null}
       </div>
       {next && (
         <StepControl

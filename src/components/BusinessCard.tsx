@@ -17,8 +17,9 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
       className={`
       relative
           grid  
-            grid-cols-1
-            gap-4
+          grid-cols-1
+          grid-rows-[1fr_auto_auto]
+          gap-4
           rounded-xl 
           bg-white
           p-6 
@@ -33,15 +34,15 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
         ${className}
       `}
     >
-      <header>
+      <header className="grid grid-rows-[1fr_auto_auto_auto]">
         <Image
           src={GABI}
-          width={128}
-          height={128}
-          sizes="128px"
+          width={192}
+          height={192}
+          sizes="192px"
           priority
           alt="Maria Burmeister"
-          className="mr-auto h-32 w-32 rounded-full object-cover object-right-top ring-2 ring-purple-900 ring-offset-4 md:mx-auto "
+          className="mr-auto h-48 w-48 self-center rounded-full object-cover object-right-top ring-2 ring-purple-900 ring-offset-4 md:mx-auto "
         />
         <h1 className="text-wrap mt-4 truncate whitespace-pre-line text-left font-rubikMono text-xl font-bold text-purple-600 dark:text-purple-300">
           <span className="text-green-200 dark:text-green-300">
