@@ -21,16 +21,27 @@ const baskervville = Baskervville({
 });
 
 const siteDescription =
-  "Check out my Frontend Developer Portfolio. Contact me for your open Frontend position. mariaburmeister+work@mariaburmeister.com";
+  "Frontend developer portfolio — polished UI, thoughtful UX, and selected projects.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mariaburmeister.com"),
-  title: "Maria Burmeister | Frontend Developer",
+  title: {
+    default: "Maria Burmeister | Frontend Developer",
+    template: "%s | Maria Burmeister",
+  },
   description: siteDescription,
   openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://mariaburmeister.com",
+    siteName: "Maria Burmeister",
     title: "Maria Burmeister | Frontend Developer",
     description: siteDescription,
-    images: ["/apple-touch-icon.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Maria Burmeister | Frontend Developer",
+    description: siteDescription,
   },
   icons: {
     icon: [

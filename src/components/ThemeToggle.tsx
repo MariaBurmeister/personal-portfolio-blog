@@ -1,18 +1,20 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState, type FunctionComponent } from "react";
+import { useSyncExternalStore, type FunctionComponent } from "react";
 import { BsMoonStarsFill, BsSunFill } from "react-icons/bs";
+
+const emptySubscribe = () => () => {};
 
 export const ThemeToggle: FunctionComponent<{ className?: string }> = ({
   className,
 }) => {
   const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
 
   const isDark = mounted && resolvedTheme === "dark";
 

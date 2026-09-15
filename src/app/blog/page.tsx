@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Blog",
   description: "Writing and notes — coming soon.",
+  robots: { index: false, follow: false },
 };
 
 const Blog = () => {
