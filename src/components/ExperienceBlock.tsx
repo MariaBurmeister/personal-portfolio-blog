@@ -27,14 +27,16 @@ export const ExperienceBlock: FunctionComponent<ExperienceBlockProps> = ({
 
   return (
     <Card
+    styleHeader="flex-wrap"
+      styleTitle="flex flex-col basis-auto"
       title={
         <>
-          {title} -{" "}
-          <span className="rounded-md bg-green-100 px-2 py-1 dark:bg-green-950 dark:text-green-200">@ {company}</span>
+          <span className="text-nowrap">{title}</span>
+          <span className="rounded-md font-light text-sm text-muted-foreground text-purple-500 dark:text-green-200">@{company}</span>
         </>
       }
       titleHelp={
-        <span>
+        <>
           <span className="rounded-md bg-purple-200 px-2 py-1 text-xs dark:bg-purple-900 dark:text-purple-100 text-nowrap">
             {startDate}
           </span>
@@ -42,7 +44,7 @@ export const ExperienceBlock: FunctionComponent<ExperienceBlockProps> = ({
           <span className="rounded-md bg-purple-200 px-2 py-1 text-xs dark:bg-purple-900 dark:text-purple-100 text-nowrap">
             {endDate}
           </span>
-        </span>
+        </>
       }
       shadow="2xl"
       className="mx-6 max-w-[600px]"

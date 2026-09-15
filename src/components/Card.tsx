@@ -4,8 +4,11 @@ interface Card {
   rounded?: "sm" | "md" | "lg" | "xl";
   shadow?: "sm" | "md" | "lg" | "xl" | "2xl";
   className?: string;
+  styleHeader?: string;
   title: string | ReactNode;
+  styleTitle?: string;
   titleHelp?: string | ReactNode;
+  styleTitleHelp?: string;
   hideTitle?: boolean;
   children: ReactNode;
   styleContent?: string;
@@ -32,9 +35,12 @@ export const Card: FunctionComponent<Card> = ({
   className,
   rounded,
   shadow = "lg",
+  styleHeader,
   title,
+  styleTitle,
   hideTitle,
   titleHelp,
+  styleTitleHelp,
   children,
   styleContent,
   footer,
@@ -57,15 +63,15 @@ export const Card: FunctionComponent<Card> = ({
       ${className}
     `}
     >
-      <header className="flex max-w-full items-center justify-between gap-4">
+      <header className={`flex max-w-full items-center justify-between gap-x-4 gap-y-2 mb-2 ${styleHeader}`}>
         <h4
           className={`${
             hideTitle ? "sr-only" : ""
-          } max-w-full shrink text-ellipsis break-words font-bold line-clamp-1`}
+          } font-bold ${styleTitle}`}
         >
           {title}
         </h4>
-        {titleHelp && <p className="text-xs">{titleHelp}</p>}
+        {titleHelp && <p className={`text-xs ${styleTitleHelp}`}>{titleHelp}</p>}
       </header>
       <hr className="my-1" />
       <section className={`font-baskervville ${styleContent}`}>{children}</section>
