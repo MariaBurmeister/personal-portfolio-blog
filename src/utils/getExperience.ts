@@ -2,8 +2,11 @@ export interface Experience {
   title: string;
   company: string;
   location: string;
+  /** ISO date (YYYY-MM-DD). */
   startDate: string;
-  endDate: string;
+  /** ISO date (YYYY-MM-DD); omit for a current role ("Present"). */
+  endDate?: string;
+  /** First paragraph is the collapsed summary; the rest show on "show more". */
   description: string[];
   stack: Stack;
 }
@@ -13,91 +16,86 @@ export type Stack = Technology[];
 export interface Technology {
   purpose: string;
   name: string;
+  /** Iconify icon id, or empty string to render the name as text. */
   icon: string;
 }
 
 export type Experiences = Experience[];
 
+/** Newest first. */
 const experiences: Experiences = [
   {
-    title: "Software Engineering Intern",
-    company: "Claimsforce",
+    title: "Frontend Developer",
+    company: "Craftboxx",
     location: "Hamburg, Germany",
-    startDate: "02-01-2021",
-    endDate: "07-31-2021",
+    startDate: "2023-05-01",
     description: [
-      `During my internship, I worked on a self-contained full-stack project called decision tree.
-        It was a tool to build and answer questionnaires which led to different outcomes depending on previous answers.
-        I built the entirety of the project from scratch in 6 months, under the mentorship of an experienced developer who later became my team lead.
-      `,
-      `At this opportunity, I was introduced to some architectural concepts such as Domain Driven Design, Clean Architecture and Event Sourcing.
-        I got to use some company's stack, like React, Bootstrap, Node.js, and AWS, but also some unrelated tech like Firebase.
-      `,
-      `This was a valuable learning period, which led to a permanent Junior Engineering position at the same company.`,
+      `First frontend-focused developer at Craftboxx, where I grew from junior to mid-level while establishing frontend practices and conventions across multiple projects.`,
+      `Owned the technical migration of a large PHP/Laravel + Blade + Vanilla JS application to Inertia.js, Vue 3 and TypeScript: researched and evaluated architectural alternatives, presented them to the team so we could decide together, then designed the foundations - build infrastructure, Laravel/Inertia integration, controller conventions, modal/offcanvas page flows, navigation history and redirects.`,
+      `Established conventions for the migrated codebase focused on maintainability, developer experience and consistent interfaces, and began incremental page implementation while keeping the existing application running alongside.`,
+      `Led a Bootstrap 4 → 5 migration together with a comprehensive visual redesign, extending Bootstrap beyond its standard theming while staying compatible with the existing application.`,
+      `Introduced Vitest as the frontend testing framework where no automated frontend tests existed before, and PostHog for product analytics - advocating for metrics to validate assumptions, evaluate features and inform product decisions.`,
+      `Promoted semantic HTML and accessibility, and helped improve how the team works: feature discovery, defining metrics and a definition of done, project retros and frontend knowledge-sharing sessions.`,
     ],
     stack: [
-      { purpose: "Frontend", name: "React", icon: "mdi:react" },
-      { purpose: "Frontend", name: "Bootstrap", icon: "mdi:bootstrap" },
+      { purpose: "Frontend framework", name: "Vue 3", icon: "mdi:vuejs" },
+      { purpose: "Frontend framework", name: "Inertia.js", icon: "" },
       {
-        purpose: "Frontend & Backend",
-        name: "JavaScript",
-        icon: "mdi:language-javascript",
-      },
-      { purpose: "Backend", name: "Node.js", icon: "mdi:nodejs" },
-      { purpose: "Database", name: "Graphql", icon: "mdi:graphql" },
-      { purpose: "database", name: "Firebase", icon: "mdi:firebase" },
-      { purpose: "CI/CD", name: "AWS", icon: "mdi:aws" },
-      { purpose: "Deployment", name: "AWS", icon: "mdi:aws" },
-      { purpose: "Testing", name: "Jest", icon: "" },
-    ],
-  },
-  {
-    title: "Junior Frontend Engineer",
-    company: "Claimsforce",
-    location: "Hamburg, Germany",
-    startDate: "08-01-2021",
-    endDate: "08-31-2022",
-    description: [
-      `As a Junior Frontend developer I worked in an multidisciplinary
-        team developing features to a Digital Product in a fast-
-        paced agile environment. I took part in every part of
-        development process, from discovery to release to
-        maintenance.`,
-      `An active, eager and creative contributor, 
-        I was also involved in the technical and conceptual discussions about the product and its features,
-        as well as the design of some of the features for which I was responsible.`,
-      `Ocasionally, I have also contributed to the backend of the platform, which is built with Node.js and TypeScript.`,
-    ],
-    stack: [
-      { purpose: "Frontend", name: "React", icon: "mdi:react" },
-      {
-        purpose: "Frontend & Backend",
+        purpose: "Language",
         name: "TypeScript",
         icon: "mdi:language-typescript",
       },
-      { purpose: "Backend", name: "Node.js", icon: "mdi:nodejs" },
-      { purpose: "Database", name: "Graphql", icon: "mdi:graphql" },
-      { purpose: "CI/CD", name: "AWS", icon: "mdi:aws" },
+      { purpose: "Backend framework", name: "Laravel", icon: "mdi:laravel" },
+      { purpose: "Styling", name: "Bootstrap", icon: "mdi:bootstrap" },
+      { purpose: "Styling", name: "Sass", icon: "mdi:sass" },
+      { purpose: "Testing", name: "Vitest", icon: "simple-icons:vitest" },
+      { purpose: "Product analytics", name: "PostHog", icon: "" },
+      { purpose: "Version control", name: "GitLab", icon: "mdi:gitlab" },
+    ],
+  },
+  {
+    title: "Frontend Developer",
+    company: "Claimsforce",
+    location: "Hamburg, Germany",
+    startDate: "2021-02-01",
+    endDate: "2022-08-31",
+    description: [
+      `Joined as a Software Development Intern and progressed to Junior Frontend Developer in a highly collaborative, multidisciplinary agile team.`,
+      `Owned frontend features along their whole lifecycle - from discovery and implementation through release and maintenance — working closely with product, design and engineering.`,
+      `Became one of the main contributors to the company's design system component library, used across the platform.`,
+      `During the internship I built a self-contained full-stack "decision tree" tool from scratch under the mentorship of a senior developer, and was introduced to Domain-Driven Design, Clean Architecture and Event Sourcing along the way.`,
+    ],
+    stack: [
+      { purpose: "Frontend framework", name: "React", icon: "mdi:react" },
+      {
+        purpose: "Language",
+        name: "TypeScript",
+        icon: "mdi:language-typescript",
+      },
+      { purpose: "Styling", name: "Bootstrap", icon: "mdi:bootstrap" },
+      { purpose: "Backend runtime", name: "Node.js", icon: "mdi:nodejs" },
+      { purpose: "API", name: "GraphQL", icon: "mdi:graphql" },
+      { purpose: "Infrastructure", name: "AWS", icon: "" },
       { purpose: "Testing", name: "Jest", icon: "" },
-      { purpose: "E2E Testing", name: "Cypress", icon: "" },
+      { purpose: "E2E testing", name: "Cypress", icon: "" },
       { purpose: "Design", name: "Figma", icon: "ph:figma-logo" },
-      { purpose: "Project Management", name: "Jira", icon: "mdi:jira" },
-      { purpose: "Communication", name: "Slack", icon: "mdi:slack" },
-      { purpose: "Colaboration", name: "Miro", icon: "" },
-      { purpose: "Management Framework", name: "Scrum", icon: "" },
+      { purpose: "Project management", name: "Jira", icon: "mdi:jira" },
+      { purpose: "Process", name: "Scrum", icon: "" },
     ],
   },
 ];
 
-const formatDate = (value: string) =>
-  new Date(value).toLocaleDateString("en-GB", {
+const formatDate = (isoDate: string) =>
+  new Date(isoDate).toLocaleDateString("en-GB", {
     year: "numeric",
     month: "short",
+    timeZone: "UTC",
   });
 
-export const getExperiences = (): Experiences =>
+/** Display-ready experiences: dates formatted, open-ended roles as "Present". */
+export const getExperiences = (): (Experience & { endDate: string })[] =>
   experiences.map((experience) => ({
     ...experience,
     startDate: formatDate(experience.startDate),
-    endDate: formatDate(experience.endDate),
+    endDate: experience.endDate ? formatDate(experience.endDate) : "Present",
   }));

@@ -24,42 +24,47 @@ export function AboutSection() {
           </LinkButton>
         }
       >
-        <h4 className="text-2xl font-bold text-purple-300 dark:text-purple-200">
+        <h3 className="flex flex-col items-center gap-2 text-2xl font-bold text-purple-300 dark:text-purple-200">
           <AboutFaceIcon /> Hi, I&apos;m Gabi!
-        </h4>
+          <span className="text-base font-normal text-purple-300 dark:text-purple-200">(Maria <strong>Gabriela</strong> Burmeister)</span>
+        </h3>
         <p>
-          I&apos;m a self-taught <strong>Frontend Engineer</strong> with a
-          <strong> Graphic design </strong>
-          background, and a passion for developing{" "}
-          <strong>delightful UX&apos;s</strong> and{" "}
-          <strong>polished UI&apos;s</strong>.
+          I&apos;m a <strong>Frontend Developer</strong> with a{" "}
+          <strong>graphic design</strong> background, working with{" "}
+          <strong>TypeScript</strong>, <strong>React</strong> and{" "}
+          <strong>Vue</strong>. I care about interfaces that are{" "}
+          <strong>accessible</strong>, <strong>usable</strong> and{" "}
+          <strong>fast</strong> - and about the product thinking behind them.
         </p>
         <p>
-          Some of the technologies I enjoy working with include{" "}
-          <strong>React</strong>, <strong>Typescript</strong> and{" "}
-          <strong>Tailwind css</strong>.
+          I moved into software development in <strong>2020</strong> and have
+          grown through self-directed learning and hands-on work: from an{" "}
+          <strong>internship</strong>, to owning features on a multidisciplinary
+          product team, to leading a large-scale{" "}
+          <strong>frontend migration</strong> as a company&apos;s first
+          frontend-focused developer.
         </p>
         <p>
-          As a <strong>developer</strong> and a <strong>learner</strong>, I am
-          always looking for ways to improve my skills and learn new
-          technologies.
+          Most recently I owned the migration of a Laravel + Blade application
+          to <strong>Inertia.js, Vue 3 and TypeScript</strong>, introduced{" "}
+          <strong>automated frontend testing</strong> and{" "}
+          <strong>product analytics</strong>, and established the conventions
+          a growing frontend codebase needs to stay maintainable.
         </p>
         <p>
-          I take pride in sharing my <strong>work philosophy</strong>, which is
-          to always strive to <strong>improve myself</strong>, my{" "}
-          <strong>environments</strong> - be them <strong>physical</strong> or
-          <strong> digital</strong> - and the <strong>relationships</strong>{" "}
-          with the people around me.
+          My foundation in
+          graphic design still shapes how I approach UI, design systems and
+          product thinking.
         </p>
         <p>
-          This tends to make me a <strong>good team player</strong>, and a
-          promoter of a <strong>healthy </strong>
-          and <strong>communicative</strong> work environment.
+          I like being involved beyond the ticket - feature discovery,
+          defining metrics, product thinking and
+          knowledge-sharing. Good frontend is a <strong>team practice</strong>,
+          not just a codebase.
         </p>
         <p>
-          I&apos;m currently looking for a new opportunity, so if you have a
-          position for which you think I would be a good fit, please feel free
-          to reach out!
+          I&apos;m currently looking for a new opportunity. If you think I&apos;d
+          be a good fit for your team, I&apos;d love to hear from you.
         </p>
       </Stepper>
     </>
