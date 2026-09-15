@@ -4,7 +4,7 @@ import { AboutFaceIcon } from "./AboutFaceIcon";
 const CONTACT_EMAIL = "mariaburmeister+work@mariaburmeister.com";
 
 const emailButtonClassName =
-  "border-none bg-gradient-to-b from-purple-200 to-purple-500 px-4 py-1 text-green-100 shadow-lg active:from-purple-500 active:to-purple-200";
+  "border-none bg-gradient-to-b from-purple-200 to-purple-500 px-4 py-1 text-green-100 shadow-lg w-min active:from-purple-500 active:to-purple-200";
 
 export function AboutSection() {
   return (
@@ -12,7 +12,6 @@ export function AboutSection() {
       <h2 className="sr-only">About</h2>
       <Stepper
         className="h-full min-h-0 text-center text-lg text-slate-600 dark:text-slate-300"
-        styleSteps="pb-16"
         nextStep="chevron"
         prevStep="chevron"
         overlay={
