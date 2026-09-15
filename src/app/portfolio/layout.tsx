@@ -36,7 +36,9 @@ const PortfolioLayout = ({ children }: { children: ReactNode }) => {
         </header>
         <section
           id="main-content"
-          className="min-h-0 min-w-0 overflow-y-auto"
+          // `relative` keeps absolutely positioned descendants (e.g. sr-only
+          // labels) contained here instead of leaking into the panel's scroll area.
+          className="relative min-h-0 min-w-0 overflow-y-auto"
         >
           {children}
         </section>

@@ -20,8 +20,14 @@ interface TimelineProps {
   connector: ReactNode;
 }
 
+/**
+ * Panes are at least the scroller height but may grow with their content
+ * (e.g. an expanded card), so tall content pushes the next pane down instead
+ * of overlapping it. Inside a pane taller than the scroller, snapping lets the
+ * user scroll freely until the pane edge.
+ */
 const paneClassName =
-  "box-border flex max-h-full min-h-full w-full shrink-0 basis-full snap-center snap-always flex-col items-center px-4";
+  "box-border flex min-h-full w-full shrink-0 snap-center snap-always flex-col items-center px-4";
 
 /** Vertical snap timeline with inset connectors between panes. */
 export const Timeline: FunctionComponent<TimelineProps> = ({
@@ -32,8 +38,9 @@ export const Timeline: FunctionComponent<TimelineProps> = ({
 }) => {
   const childrenArray = Children.toArray(children);
   const lastIndex = childrenArray.length - 1;
-  const { container, handleScroll, scrollAhead, scrollBack } =
-    usePaneScroll("top");
+  // Connectors target explicit indices: with a tall pane the "nearest pane"
+  // heuristic could otherwise skip one after scrolling within it.
+  const { container, handleScroll, scrollToPane } = usePaneScroll("top");
 
   const paneClass = [paneClassName, styleSteps].filter(Boolean).join(" ");
 
@@ -50,7 +57,7 @@ export const Timeline: FunctionComponent<TimelineProps> = ({
           <div key={index} className={paneClass}>
             {index > 0 ? (
               <ConnectorHitArea
-                onClick={scrollBack}
+                onClick={() => scrollToPane(index - 1)}
                 label="scroll to previous pane"
               >
                 {connector}
@@ -61,7 +68,7 @@ export const Timeline: FunctionComponent<TimelineProps> = ({
             <div className="shrink-0">{child}</div>
             {index < lastIndex ? (
               <ConnectorHitArea
-                onClick={scrollAhead}
+                onClick={() => scrollToPane(index + 1)}
                 label="scroll to next pane"
               >
                 {connector}

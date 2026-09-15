@@ -88,6 +88,7 @@ export function usePaneScroll(axis: "left" | "top", edgeOffset = 15) {
     isScrollEnd,
     isScrollStart,
     handleScroll: syncScrollEdges,
+    scrollToPane,
     scrollAhead: () => scrollToPane(getCurrentPaneIndex() + 1),
     scrollBack: () => scrollToPane(getCurrentPaneIndex() - 1),
   };
