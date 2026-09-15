@@ -20,7 +20,10 @@ const Routes: NavRoute[] = [
 
 const PortfolioLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <main className="flex flex-wrap items-stretch gap-8 md:flex-nowrap">
+    <main
+      id="content"
+      className="flex flex-wrap items-stretch gap-8 md:flex-nowrap"
+    >
       <BusinessCard className="grow md:min-w-fit md:max-w-fit" />
       <section
         // PoC: flexible panel height (was fixed h-[453px]) — try zoom / short viewports
@@ -31,7 +34,12 @@ const PortfolioLayout = ({ children }: { children: ReactNode }) => {
           <SecondaryNav indexRoute="/portfolio" routes={Routes} />
           <hr className="border-purple-200 dark:border-purple-800" />
         </header>
-        <section className="min-h-0 min-w-0 overflow-y-auto">{children}</section>
+        <section
+          id="main-content"
+          className="min-h-0 min-w-0 overflow-y-auto"
+        >
+          {children}
+        </section>
         <footer className="sticky bottom-0 bg-purple-100 pb-4 dark:bg-purple-950">
           <hr aria-hidden="true"  className="border-purple-200 dark:border-purple-800" />
         </footer>

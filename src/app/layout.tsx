@@ -70,13 +70,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
       className={`${rubikMono.variable} ${baskervville.variable}`}
     >
-      <body className="relative flex min-h-[100dvh] flex-col gap-8 bg-gradient-to-r from-green-200 to-purple-500 p-6 md:justify-center md:px-16 lg:px-36 dark:from-slate-950 dark:to-purple-950">
+      <body className="relative flex min-h-[100dvh] flex-col-reverse gap-8 bg-gradient-to-r from-green-200 to-purple-500 p-6 md:justify-center md:px-16 lg:px-36 dark:from-slate-950 dark:to-purple-950">
         <ThemeProvider>
+          <header className="sticky bottom-1 shrink">
+            <MainNav />
+          </header>
           {children}
           <AnalyticsWrapper />
-          <footer className="sticky bottom-1 shrink">
-            <MainNav />
-          </footer>
         </ThemeProvider>
       </body>
     </html>

@@ -56,9 +56,14 @@ export const ErrorStatus: FunctionComponent<ErrorStatusProps> = ({
   );
 
   if (variant === "embedded") {
-    return <div className="flex w-full justify-center py-8">{card}</div>;
+    return (
+      <main id="content" className="flex w-full justify-center py-8">
+        {card}
+      </main>
+    );
   }
 
+  // Standalone shell (no App MainNav) — skip-link anchors don't apply here.
   return (
     <main className="flex min-h-[100dvh] flex-col items-center justify-center gap-8 bg-gradient-to-r from-green-200 to-purple-500 p-6 md:px-16 lg:px-36 dark:from-slate-950 dark:to-purple-950">
       {card}

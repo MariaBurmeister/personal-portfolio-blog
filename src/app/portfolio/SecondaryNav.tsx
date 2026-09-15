@@ -1,4 +1,5 @@
 "use client";
+import { LinkButton } from "@/components";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FunctionComponent } from "react";
@@ -21,9 +22,11 @@ export const SecondaryNav: FunctionComponent<{
 
   return (
     <nav
+      id="secondary-nav"
       aria-label="Portfolio sections"
       className="flex flex-row flex-wrap items-center gap-4 align-middle md:px-4"
     >
+      <LinkButton href="#main-content" className="sr-only focus:not-sr-only focus:px-2">Skip to main content</LinkButton>
       <ul className="flex grow flex-row flex-wrap items-center justify-between gap-4 text-purple-400 dark:text-purple-300">
         {routes.map(({ label, path }) => {
           const isActive = path === activePath;

@@ -2,7 +2,10 @@ import Link from "next/link";
 
 const Home = () => {
   return (
-    <main className="my-auto flex flex-col items-center gap-6 self-center md:my-0">
+    <main
+      id="content"
+      className="my-auto flex flex-col items-center gap-6 self-center md:my-0"
+    >
       <h1 className="sr-only">Maria Burmeister | Frontend Developer</h1>
       <Link
         href="/portfolio"
