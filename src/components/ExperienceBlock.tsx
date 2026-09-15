@@ -55,7 +55,7 @@ export const ExperienceBlock: FunctionComponent<ExperienceBlockProps> = ({
       className="mx-6 max-w-[600px]"
       styleContent="relative"
       footer={<ExperienceStack stack={stack} />}
-      styleFooter="flex justify-between flex-wrap grow items-center pr-2 pt-1"
+      styleFooter="flex flex-wrap items-center gap-3 pr-2 pt-1"
     >
       <article className="flex flex-col gap-2 overflow-hidden px-2 pt-2 font-baskervville">
         {description.map((desc, i) =>
@@ -90,12 +90,16 @@ const ExperienceStack: FunctionComponent<{ stack: Stack }> = ({ stack }) => (
         <Icon
           key={icon + i}
           icon={icon}
+          className="text-lg"
           role="img"
           aria-hidden={false}
           aria-label={purpose ? `${name}, ${purpose}` : name}
         />
       ) : (
-        <span key={name} className="text-xs">
+        <span
+          key={name}
+          className="text-[0.65rem] font-semibold uppercase tracking-wide text-purple-500 dark:text-purple-300"
+        >
           {name}
           {purpose ? <span className="sr-only">, {purpose}</span> : null}
         </span>

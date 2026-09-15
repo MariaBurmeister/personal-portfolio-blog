@@ -52,9 +52,8 @@ export function AboutSection() {
           a growing frontend codebase needs to stay maintainable.
         </p>
         <p>
-          My foundation in
-          graphic design still shapes how I approach UI, design systems and
-          product thinking.
+          My foundation in graphic design still shapes how I approach UI, design
+          systems and product thinking.
         </p>
         <p>
           I like being involved beyond the ticket - feature discovery,
