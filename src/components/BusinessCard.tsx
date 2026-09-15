@@ -83,6 +83,7 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
           target="_blank"
           rel="noreferrer"
           className="transition-colors hover:text-green-600 dark:hover:text-green-300"
+          title="GitHub"
         >
           <GitHub className="inline text-xl" />
           <span className="sr-only">GitHub</span>
@@ -92,6 +93,7 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
           target="_blank"
           rel="noreferrer"
           className="transition-colors hover:text-green-600 dark:hover:text-green-300"
+          title="LinkedIn"
         >
           <LinkedIn className="inline text-xl" />
           <span className="sr-only">LinkedIn</span>

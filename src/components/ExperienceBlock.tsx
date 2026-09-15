@@ -73,7 +73,7 @@ export const ExperienceBlock: FunctionComponent<ExperienceBlockProps> = ({
       </article>
       <button
         type="button"
-        className="font-standard text-xs text-purple-400 underline hover:text-purple-600 dark:text-purple-300 dark:hover:text-purple-100"
+        className="px-2 py-1 font-standard text-xs text-purple-400 underline hover:text-purple-600 dark:text-purple-300 dark:hover:text-purple-100"
         aria-expanded={expanded}
         onClick={() => setExpanded(!expanded)}
       >
@@ -87,14 +87,18 @@ const ExperienceStack: FunctionComponent<{ stack: Stack }> = ({ stack }) => (
   <>
     {stack.map(({ name, icon, purpose }, i) =>
       icon ? (
-        <Icon
+        <span
           key={icon + i}
-          icon={icon}
-          className="text-lg"
-          role="img"
-          aria-hidden={false}
-          aria-label={purpose ? `${name}, ${purpose}` : name}
-        />
+          title={purpose ? `${name} - ${purpose}` : name}
+        >
+          <Icon
+            icon={icon}
+            className="text-lg"
+            role="img"
+            aria-hidden={false}
+            aria-label={purpose ? `${name}, ${purpose}` : name}
+          />
+        </span>
       ) : (
         <span
           key={name}

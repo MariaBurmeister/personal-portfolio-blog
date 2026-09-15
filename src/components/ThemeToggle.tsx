@@ -24,6 +24,7 @@ export const ThemeToggle: FunctionComponent<{ className?: string }> = ({
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className={`justify-self-end rounded-full bg-purple-100 p-2 text-purple-600 ring-2 ring-purple-600 ring-offset-2 transition hover:bg-purple-200 dark:bg-purple-900 dark:text-purple-200 dark:ring-purple-300 dark:ring-offset-slate-900 dark:hover:bg-purple-800 ${className ?? ""}`}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      title={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >
       {isDark ? (
         <BsSunFill className="text-lg" aria-hidden />

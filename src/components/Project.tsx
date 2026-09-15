@@ -42,6 +42,7 @@ const ProjectActions: FunctionComponent<{ gitHubLink: string, projectName: strin
       rel="noreferrer"
       className="group flex grow items-center justify-end gap-2 text-2xl"
       aria-label={`View ${projectName} on GitHub`}
+      title={`View ${projectName} on GitHub`}
     >
       <span className="text-sm text-purple-400 underline opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-all dark:text-purple-300">
         check on GitHub

@@ -92,6 +92,7 @@ const ConnectorHitArea: FunctionComponent<{
     type="button"
     onClick={onClick}
     className="flex min-h-11 w-full min-w-0 flex-1 cursor-pointer items-stretch justify-center"
+    title={label}
   >
     {children}
     <span className="sr-only">{label}</span>

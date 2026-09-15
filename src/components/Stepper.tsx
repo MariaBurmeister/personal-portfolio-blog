@@ -138,6 +138,7 @@ const StepControl: FunctionComponent<{
     }`}
     onClick={onClick}
     disabled={hidden}
+    title={label}
   >
     {children}
     <span className="sr-only">{label}</span>

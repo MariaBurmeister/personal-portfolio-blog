@@ -20,6 +20,7 @@ export const MainNav: FunctionComponent = () => {
         href="/"
         className="col-start-1 col-end-2 row-start-1 row-end-2 w-min self-center rounded-full bg-purple-100 px-2 py-3 font-rubikMono text-xl text-purple-600 ring-2 ring-purple-600 ring-offset-4 dark:bg-purple-950 dark:text-purple-200 dark:ring-purple-300 dark:ring-offset-slate-900"
         aria-label="Home - Maria Burmeister - Frontend Developer"
+        title="Home"
       >
         <span className="text-green-200 dark:text-green-300">M</span>B
       </Link>
