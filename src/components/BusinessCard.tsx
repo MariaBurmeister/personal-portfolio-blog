@@ -45,17 +45,19 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
           alt="Maria Burmeister"
           className="mr-auto h-48 w-48 self-center rounded-full object-cover object-right-top ring-2 ring-purple-900 ring-offset-4 md:mx-auto "
         />
-        <h1 className="text-wrap mt-4 truncate whitespace-pre-line text-left font-rubikMono text-xl font-bold text-purple-600 dark:text-purple-300">
-          <span className="text-green-200 dark:text-green-300">
-            Maria
-            <br />
+        <hgroup>
+          <h1 className="text-wrap mt-4 truncate whitespace-pre-line text-left font-rubikMono text-xl font-bold text-purple-600 dark:text-purple-300">
+            <span className="text-green-200 dark:text-green-300">
+              Maria
+              <br />
+            </span>
+            Burmeister
+          </h1>
+          <hr />
+          <span className=" mt-1 text-left text-sm leading-snug text-purple-400 dark:text-purple-400">
+            Frontend Developer
           </span>
-          Burmeister
-        </h1>
-        <hr />
-        <h2 className="mt-1 text-left text-sm leading-snug text-purple-400 dark:text-purple-400">
-          Frontend Developer
-        </h2>
+          </hgroup>
       </header>
 
       <section className="-mx-6 my-auto bg-purple-200 p-4 text-center shadow-inner shadow-purple-300 dark:bg-purple-950 dark:shadow-purple-900">

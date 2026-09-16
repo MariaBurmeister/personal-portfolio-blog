@@ -64,13 +64,13 @@ export const Card: FunctionComponent<Card> = ({
     `}
     >
       <header className={`flex max-w-full items-center justify-between gap-x-4 gap-y-2 mb-2 ${styleHeader}`}>
-        <h4
+        <h3
           className={`${
             hideTitle ? "sr-only" : ""
           } font-bold ${styleTitle}`}
         >
           {title}
-        </h4>
+        </h3>
         {titleHelp && <p className={`text-xs ${styleTitleHelp}`}>{titleHelp}</p>}
       </header>
       <hr className="my-1" />
