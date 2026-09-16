@@ -1,12 +1,8 @@
-import {
-  Baskervville,
-  Rubik_Mono_One,
-} from "next/font/google";
+import { Baskervville, Rubik_Mono_One } from "next/font/google";
 import { AnalyticsWrapper, MainNav, ThemeProvider } from "@/components";
 import type { Metadata, Viewport } from "next";
 import { ReactNode } from "react";
 import "./globals.scss";
-
 
 const rubikMono = Rubik_Mono_One({
   weight: "400",
@@ -70,7 +66,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
       className={`${rubikMono.variable} ${baskervville.variable}`}
     >
-      <body className="accent-purple-500 selection:bg-green-200 selection:text-purple-600 dark:selection:bg-purple-600 dark:selection:text-green-200 relative flex min-h-[100dvh] flex-col-reverse gap-8 bg-gradient-to-r from-green-200 to-purple-500 p-6 md:justify-center md:px-16 lg:px-36 dark:from-slate-950 dark:to-purple-950">
+      <body className="relative flex min-h-[100dvh] flex-col-reverse gap-8 bg-gradient-to-r from-green-200 to-purple-500 p-6 accent-purple-500 selection:bg-green-200 selection:text-purple-600 dark:from-slate-950 dark:to-purple-950 dark:selection:bg-purple-600 dark:selection:text-green-200 md:justify-center md:px-16 lg:px-36">
         <ThemeProvider>
           <header className="sticky bottom-1 z-50 shrink">
             <MainNav />

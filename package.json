@@ -8,7 +8,10 @@
   },
   "scripts": {
     "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "dev": "next dev",
+    "prebuild": "pnpm lint && pnpm format:check",
     "build": "next build",
     "start": "next start"
   },

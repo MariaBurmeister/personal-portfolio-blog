@@ -18,23 +18,7 @@ export const LinkButton: FunctionComponent<LinkButton> = ({
 }) => (
   <a
     href={href}
-    className={`
-        rounded-full
-        border
-        border-purple-900
-        bg-purple-100
-        px-2
-        py-1
-        shadow-sm
-        shadow-green-400
-        hover:shadow-md
-        hover:shadow-green-400
-        dark:border-purple-400
-        dark:bg-purple-900
-        dark:text-purple-100
-        dark:shadow-green-700
-        ${className}
-      `}
+    className={`rounded-full border border-purple-900 bg-purple-100 px-2 py-1 shadow-sm shadow-green-400 hover:shadow-md hover:shadow-green-400 dark:border-purple-400 dark:bg-purple-900 dark:text-purple-100 dark:shadow-green-700 ${className} `}
     {...rest}
   >
     {children}

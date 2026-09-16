@@ -31,10 +31,10 @@ export const Project: FunctionComponent<Project> = ({
   );
 };
 
-const ProjectActions: FunctionComponent<{ gitHubLink: string, projectName: string }> = ({
-  gitHubLink,
-  projectName,
-}) => {
+const ProjectActions: FunctionComponent<{
+  gitHubLink: string;
+  projectName: string;
+}> = ({ gitHubLink, projectName }) => {
   return (
     <a
       href={gitHubLink}
@@ -44,7 +44,7 @@ const ProjectActions: FunctionComponent<{ gitHubLink: string, projectName: strin
       aria-label={`View ${projectName} on GitHub`}
       title={`View ${projectName} on GitHub`}
     >
-      <span className="text-sm text-purple-400 underline opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-all dark:text-purple-300">
+      <span className="text-sm text-purple-400 underline opacity-0 transition-all group-hover:opacity-100 group-focus:opacity-100 dark:text-purple-300">
         check on GitHub
       </span>
       <GitHub />

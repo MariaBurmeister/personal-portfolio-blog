@@ -13,7 +13,7 @@ export const ThemeToggle: FunctionComponent<{ className?: string }> = ({
   const mounted = useSyncExternalStore(
     emptySubscribe,
     () => true,
-    () => false
+    () => false,
   );
 
   const isDark = mounted && resolvedTheme === "dark";

@@ -42,11 +42,11 @@ export const ExperienceBlock: FunctionComponent<ExperienceBlockProps> = ({
       }
       titleHelp={
         <>
-          <span className="rounded-md bg-purple-200 px-2 py-1 text-xs dark:bg-purple-900 dark:text-purple-100 text-nowrap">
+          <span className="text-nowrap rounded-md bg-purple-200 px-2 py-1 text-xs dark:bg-purple-900 dark:text-purple-100">
             {startDate}
           </span>
           {" - "}
-          <span className="rounded-md bg-purple-200 px-2 py-1 text-xs dark:bg-purple-900 dark:text-purple-100 text-nowrap">
+          <span className="text-nowrap rounded-md bg-purple-200 px-2 py-1 text-xs dark:bg-purple-900 dark:text-purple-100">
             {endDate}
           </span>
         </>
@@ -68,7 +68,7 @@ export const ExperienceBlock: FunctionComponent<ExperienceBlockProps> = ({
             </p>
           ) : (
             expanded && <p key={title + i}>{desc}</p>
-          )
+          ),
         )}
       </article>
       <button
@@ -87,10 +87,7 @@ const ExperienceStack: FunctionComponent<{ stack: Stack }> = ({ stack }) => (
   <>
     {stack.map(({ name, icon, purpose }, i) =>
       icon ? (
-        <span
-          key={icon + i}
-          title={purpose ? `${name} - ${purpose}` : name}
-        >
+        <span key={icon + i} title={purpose ? `${name} - ${purpose}` : name}>
           <Icon
             icon={icon}
             className="text-lg"
@@ -107,7 +104,7 @@ const ExperienceStack: FunctionComponent<{ stack: Stack }> = ({ stack }) => (
           {name}
           {purpose ? <span className="sr-only">, {purpose}</span> : null}
         </span>
-      )
+      ),
     )}
   </>
 );

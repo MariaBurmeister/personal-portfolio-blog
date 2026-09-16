@@ -30,7 +30,10 @@ const FEATURED_PROJECTS = [
 
 /** PoC: human titles for featured repos (slug still used for GitHub). */
 const PROJECT_DISPLAY: Partial<
-  Record<(typeof FEATURED_PROJECTS)[number], { name: string; description?: string }>
+  Record<
+    (typeof FEATURED_PROJECTS)[number],
+    { name: string; description?: string }
+  >
 > = {
   "personal-portfolio-blog": {
     name: "This Portfolio",
@@ -54,7 +57,7 @@ export const getProjects = async (): Promise<Projects> => {
   }
 
   const url = new URL(
-    `https://api.github.com/users/${username}/repos?sort=created&direction=desc`
+    `https://api.github.com/users/${username}/repos?sort=created&direction=desc`,
   );
 
   const headers: HeadersInit = {
@@ -72,10 +75,11 @@ export const getProjects = async (): Promise<Projects> => {
 
   return repos
     .filter((repo) =>
-      (FEATURED_PROJECTS as readonly string[]).includes(repo.name)
+      (FEATURED_PROJECTS as readonly string[]).includes(repo.name),
     )
     .map(({ id, name, description, html_url, language }) => {
-      const display = PROJECT_DISPLAY[name as (typeof FEATURED_PROJECTS)[number]];
+      const display =
+        PROJECT_DISPLAY[name as (typeof FEATURED_PROJECTS)[number]];
       return {
         id,
         name: display?.name ?? name,

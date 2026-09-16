@@ -48,33 +48,22 @@ export const Card: FunctionComponent<Card> = ({
 }) => {
   return (
     <article
-      className={`
-      relative 
-      ${rounded ? roundedClasses[rounded] : "rounded"}
-      border border-purple-900 
-      bg-gradient-to-b from-white to-purple-100 
-      p-4 
-      text-purple-900 
-      dark:border-purple-700
-      dark:from-slate-900
-      dark:to-purple-950
-      dark:text-purple-100
-      ${shadowClasses[shadow]} shadow-purple-200 dark:shadow-purple-950/50
-      ${className}
-    `}
+      className={`relative ${rounded ? roundedClasses[rounded] : "rounded"} border border-purple-900 bg-gradient-to-b from-white to-purple-100 p-4 text-purple-900 dark:border-purple-700 dark:from-slate-900 dark:to-purple-950 dark:text-purple-100 ${shadowClasses[shadow]} shadow-purple-200 dark:shadow-purple-950/50 ${className} `}
     >
-      <header className={`flex max-w-full items-center justify-between gap-x-4 gap-y-2 mb-2 ${styleHeader}`}>
-        <h3
-          className={`${
-            hideTitle ? "sr-only" : ""
-          } font-bold ${styleTitle}`}
-        >
+      <header
+        className={`mb-2 flex max-w-full items-center justify-between gap-x-4 gap-y-2 ${styleHeader}`}
+      >
+        <h3 className={`${hideTitle ? "sr-only" : ""} font-bold ${styleTitle}`}>
           {title}
         </h3>
-        {titleHelp && <p className={`text-xs ${styleTitleHelp}`}>{titleHelp}</p>}
+        {titleHelp && (
+          <p className={`text-xs ${styleTitleHelp}`}>{titleHelp}</p>
+        )}
       </header>
       <hr className="my-1" />
-      <section className={`font-baskervville ${styleContent}`}>{children}</section>
+      <section className={`font-baskervville ${styleContent}`}>
+        {children}
+      </section>
       <hr className="my-1" />
       {footer && <footer className={`${styleFooter}`}>{footer}</footer>}
     </article>

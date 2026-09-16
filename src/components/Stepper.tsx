@@ -32,7 +32,7 @@ const paneClassName =
 
 function resolveControl(
   control: ReactNode | string | undefined,
-  fallback: ReactNode
+  fallback: ReactNode,
 ) {
   if (control === undefined) return null;
   if (typeof control === "string") return fallback;
@@ -42,7 +42,7 @@ function resolveControl(
 function withPaneProps(
   child: ReactNode,
   index: number,
-  extraClassName?: string
+  extraClassName?: string,
 ) {
   if (!isValidElement(child)) return child;
 
@@ -76,11 +76,11 @@ export const Stepper: FunctionComponent<StepperProps> = ({
 
   const prev = resolveControl(
     prevStep,
-    <BsChevronLeft className={chevronClassName} aria-hidden />
+    <BsChevronLeft className={chevronClassName} aria-hidden />,
   );
   const next = resolveControl(
     nextStep,
-    <BsChevronRight className={chevronClassName} aria-hidden />
+    <BsChevronRight className={chevronClassName} aria-hidden />,
   );
 
   return (
@@ -103,7 +103,7 @@ export const Stepper: FunctionComponent<StepperProps> = ({
           className="flex h-full min-h-0 min-w-0 snap-x snap-mandatory flex-row items-center overflow-x-auto overflow-y-hidden"
         >
           {childrenArray.map((child, index) =>
-            withPaneProps(child, index, styleSteps)
+            withPaneProps(child, index, styleSteps),
           )}
         </div>
         {overlay ? (

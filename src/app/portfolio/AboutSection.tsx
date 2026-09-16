@@ -25,7 +25,9 @@ export function AboutSection() {
       >
         <h3 className="flex flex-col items-center gap-2 text-2xl font-bold text-purple-300 dark:text-purple-200">
           <AboutFaceIcon /> Hi, I&apos;m Gabi!
-          <span className="text-base font-normal text-purple-300 dark:text-purple-200">(Maria <strong>Gabriela</strong> Burmeister)</span>
+          <span className="text-base font-normal text-purple-300 dark:text-purple-200">
+            (Maria <strong>Gabriela</strong> Burmeister)
+          </span>
         </h3>
         <p>
           I&apos;m a <strong>Frontend Developer</strong> with a{" "}
@@ -47,22 +49,21 @@ export function AboutSection() {
           Most recently I owned the migration of a Laravel + Blade application
           to <strong>Inertia.js, Vue 3 and TypeScript</strong>, introduced{" "}
           <strong>automated frontend testing</strong> and{" "}
-          <strong>product analytics</strong>, and established the conventions
-          a growing frontend codebase needs to stay maintainable.
+          <strong>product analytics</strong>, and established the conventions a
+          growing frontend codebase needs to stay maintainable.
         </p>
         <p>
           My foundation in graphic design still shapes how I approach UI, design
           systems and product thinking.
         </p>
         <p>
-          I like being involved beyond the ticket - feature discovery,
-          defining metrics, product thinking and
-          knowledge-sharing. Good frontend is a <strong>team practice</strong>,
-          not just a codebase.
+          I like being involved beyond the ticket - feature discovery, defining
+          metrics, product thinking and knowledge-sharing. Good frontend is a{" "}
+          <strong>team practice</strong>, not just a codebase.
         </p>
         <p>
-          I&apos;m currently looking for a new opportunity. If you think I&apos;d
-          be a good fit for your team, I&apos;d love to hear from you.
+          I&apos;m currently looking for a new opportunity. If you think
+          I&apos;d be a good fit for your team, I&apos;d love to hear from you.
         </p>
       </Stepper>
     </>

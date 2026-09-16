@@ -34,12 +34,16 @@ GITHUB_TOKEN=your-fine-grained-github-token
 
 ### Scripts
 
-| Command         | Description            |
-| --------------- | ---------------------- |
-| `pnpm dev`      | Development server     |
-| `pnpm build`    | Production build       |
-| `pnpm start`    | Serve production build |
-| `pnpm lint`     | ESLint                 |
+| Command             | Description                           |
+| ------------------- | ------------------------------------- |
+| `pnpm dev`          | Development server                    |
+| `pnpm build`        | Production build (`prebuild` runs first) |
+| `pnpm start`        | Serve production build                |
+| `pnpm lint`         | ESLint                                |
+| `pnpm format`       | Prettier (write)                      |
+| `pnpm format:check` | Prettier (check only)                 |
+
+The editor formats with Prettier and applies ESLint fixes on save. Vercel runs `pnpm build`, which runs `prebuild` (lint + Prettier check) first. That must pass before the Next.js build starts.
 
 ## Deploy
 

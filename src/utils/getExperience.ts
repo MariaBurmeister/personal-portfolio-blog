@@ -42,7 +42,11 @@ const experiences: Experiences = [
     ],
     stack: [
       { purpose: "Frontend framework", name: "Vue 3", icon: "mdi:vuejs" },
-      { purpose: "Frontend framework", name: "Inertia.js", icon: "simple-icons:inertia" },
+      {
+        purpose: "Frontend framework",
+        name: "Inertia.js",
+        icon: "simple-icons:inertia",
+      },
       {
         purpose: "Language",
         name: "TypeScript",
@@ -52,7 +56,11 @@ const experiences: Experiences = [
       { purpose: "Styling", name: "Bootstrap", icon: "mdi:bootstrap" },
       { purpose: "Styling", name: "Sass", icon: "mdi:sass" },
       { purpose: "Testing", name: "Vitest", icon: "simple-icons:vitest" },
-      { purpose: "Product analytics", name: "PostHog", icon: "simple-icons:posthog" },
+      {
+        purpose: "Product analytics",
+        name: "PostHog",
+        icon: "simple-icons:posthog",
+      },
       { purpose: "Version control", name: "GitLab", icon: "mdi:gitlab" },
     ],
   },
@@ -79,7 +87,11 @@ const experiences: Experiences = [
       { purpose: "Styling", name: "Bootstrap", icon: "mdi:bootstrap" },
       { purpose: "Backend runtime", name: "Node.js", icon: "mdi:nodejs" },
       { purpose: "API", name: "GraphQL", icon: "mdi:graphql" },
-      { purpose: "Infrastructure", name: "AWS", icon: "simple-icons:amazonaws" },
+      {
+        purpose: "Infrastructure",
+        name: "AWS",
+        icon: "simple-icons:amazonaws",
+      },
       { purpose: "Testing", name: "Jest", icon: "simple-icons:jest" },
       { purpose: "E2E testing", name: "Cypress", icon: "simple-icons:cypress" },
       { purpose: "Design", name: "Figma", icon: "ph:figma-logo" },

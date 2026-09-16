@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 function paneOffsetInContainer(
   pane: HTMLElement,
   container: HTMLElement,
-  axis: "left" | "top"
+  axis: "left" | "top",
 ) {
   const paneRect = pane.getBoundingClientRect();
   const containerRect = container.getBoundingClientRect();
@@ -19,7 +19,7 @@ function getNearestPaneIndex(
   container: HTMLElement,
   panes: HTMLElement[],
   scrollPos: number,
-  axis: "left" | "top"
+  axis: "left" | "top",
 ) {
   let best = 0;
   let bestDist = Infinity;
@@ -47,14 +47,14 @@ export function usePaneScroll(axis: "left" | "top", edgeOffset = 15) {
     if (axis === "left") {
       setIsScrollStart(el.scrollLeft <= edgeOffset);
       setIsScrollEnd(
-        el.scrollLeft + el.offsetWidth >= el.scrollWidth - edgeOffset
+        el.scrollLeft + el.offsetWidth >= el.scrollWidth - edgeOffset,
       );
       return;
     }
 
     setIsScrollStart(el.scrollTop <= edgeOffset);
     setIsScrollEnd(
-      el.scrollTop + el.offsetHeight >= el.scrollHeight - edgeOffset
+      el.scrollTop + el.offsetHeight >= el.scrollHeight - edgeOffset,
     );
   };
 

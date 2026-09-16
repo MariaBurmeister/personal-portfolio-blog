@@ -1,6 +1,6 @@
 export const getData = async <T>(
   url: URL,
-  options?: RequestInit
+  options?: RequestInit,
 ): Promise<T> => {
   const res = await fetch(url, options);
 

@@ -16,8 +16,7 @@ const Home = () => {
         <span className="text-green-200 dark:text-green-300" aria-hidden="true">
           M
         </span>
-        B
-        <span className="sr-only">Maria Burmeister - Frontend Developer</span>
+        B<span className="sr-only">Maria Burmeister - Frontend Developer</span>
       </Link>
     </main>
   );

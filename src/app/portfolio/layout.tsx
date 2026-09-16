@@ -27,7 +27,7 @@ const PortfolioLayout = ({ children }: { children: ReactNode }) => {
       <BusinessCard className="grow md:min-w-fit md:max-w-fit" />
       <section
         // PoC: flexible panel height (was fixed h-[453px]) — try zoom / short viewports
-        className="relative grid min-h-[min(28rem,calc(100dvh-8rem))] max-h-[calc(100dvh-8rem)] h-[min(70dvh,36rem)] grow overflow-auto rounded-xl bg-gradient-to-b from-white to-purple-100 px-4 shadow-2xl dark:from-slate-900 dark:to-purple-950"
+        className="relative grid h-[min(70dvh,36rem)] max-h-[calc(100dvh-8rem)] min-h-[min(28rem,calc(100dvh-8rem))] grow overflow-auto rounded-xl bg-gradient-to-b from-white to-purple-100 px-4 shadow-2xl dark:from-slate-900 dark:to-purple-950"
         style={{ gridTemplateRows: "auto 1fr auto" }}
       >
         <header className="sticky top-0 flex flex-col items-stretch gap-4 bg-white pt-4 dark:bg-slate-900">
@@ -43,7 +43,10 @@ const PortfolioLayout = ({ children }: { children: ReactNode }) => {
           {children}
         </section>
         <footer className="sticky bottom-0 bg-purple-100 pb-4 dark:bg-purple-950">
-          <hr aria-hidden="true"  className="border-purple-200 dark:border-purple-800" />
+          <hr
+            aria-hidden="true"
+            className="border-purple-200 dark:border-purple-800"
+          />
         </footer>
       </section>
     </main>
