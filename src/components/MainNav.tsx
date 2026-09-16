@@ -17,7 +17,7 @@ export const MainNav: FunctionComponent = () => {
   return (
     <nav
       id="main-nav"
-      className="relative z-50 grid grid-cols-[auto_1fr_auto] grid-rows-[auto] items-center gap-4 rounded-e-[2rem] rounded-s-[2rem] bg-white shadow-2xl dark:bg-slate-900 dark:shadow-purple-950/40"
+      className="relative z-50 grid grid-cols-[auto_1fr_auto] grid-rows-[auto] items-center gap-4 rounded-s-4xl rounded-e-4xl bg-white shadow-2xl dark:bg-slate-900 dark:shadow-purple-950/40"
     >
       <Link
         href="/"
@@ -77,7 +77,7 @@ const MainNavItem: FunctionComponent<NavItem> = ({
   return (
     <li className="py-2">
       <Link
-        className={`rounded px-2 py-1 hover:bg-purple-100 hover:text-purple-500 dark:hover:bg-purple-900 dark:hover:text-purple-200 ${
+        className={`rounded-sm px-2 py-1 hover:bg-purple-100 hover:text-purple-500 dark:hover:bg-purple-900 dark:hover:text-purple-200 ${
           isActive
             ? "bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-200"
             : ""

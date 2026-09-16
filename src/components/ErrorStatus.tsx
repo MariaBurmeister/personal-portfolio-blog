@@ -20,7 +20,7 @@ export const ErrorStatus: FunctionComponent<ErrorStatusProps> = ({
   const card = (
     <section
       aria-labelledby="error-title"
-      className="w-full max-w-lg rounded-xl border border-purple-900 bg-gradient-to-b from-white to-purple-100 p-6 text-purple-900 shadow-2xl shadow-purple-200 dark:border-purple-700 dark:from-slate-900 dark:to-purple-950 dark:text-purple-100 dark:shadow-purple-950/50"
+      className="w-full max-w-lg rounded-xl border border-purple-900 bg-linear-to-b from-white to-purple-100 p-6 text-purple-900 shadow-2xl shadow-purple-200 dark:border-purple-700 dark:from-slate-900 dark:to-purple-950 dark:text-purple-100 dark:shadow-purple-950/50"
     >
       <p className="font-rubikMono text-sm tracking-wide text-purple-600 dark:text-purple-300">
         Error {statusCode}
@@ -65,7 +65,7 @@ export const ErrorStatus: FunctionComponent<ErrorStatusProps> = ({
 
   // Standalone shell (no App MainNav) — skip-link anchors don't apply here.
   return (
-    <main className="flex min-h-[100dvh] flex-col items-center justify-center gap-8 bg-gradient-to-r from-green-200 to-purple-500 p-6 dark:from-slate-950 dark:to-purple-950 md:px-16 lg:px-36">
+    <main className="flex min-h-dvh flex-col items-center justify-center gap-8 bg-linear-to-r from-green-200 to-purple-500 p-6 md:px-16 lg:px-36 dark:from-slate-950 dark:to-purple-950">
       {card}
     </main>
   );

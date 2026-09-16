@@ -7,7 +7,7 @@ import {
 } from "@/components";
 import type { Metadata, Viewport } from "next";
 import { ReactNode } from "react";
-import "./globals.scss";
+import "./globals.css";
 
 const rubikMono = Rubik_Mono_One({
   weight: "400",
@@ -72,17 +72,17 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
       className={`${rubikMono.variable} ${baskervville.variable}`}
     >
-      <body className="relative flex min-h-[100dvh] flex-col gap-8 bg-gradient-to-r from-green-200 to-purple-500 p-6 accent-purple-500 selection:bg-green-200 selection:text-purple-600 dark:from-slate-950 dark:to-purple-950 dark:selection:bg-purple-600 dark:selection:text-green-200 md:justify-center md:px-16 lg:px-36">
+      <body className="relative flex min-h-dvh flex-col gap-8 bg-linear-to-r from-green-200 to-purple-500 p-6 accent-purple-500 selection:bg-green-200 selection:text-purple-600 md:justify-center md:px-16 lg:px-36 dark:from-slate-950 dark:to-purple-950 dark:selection:bg-purple-600 dark:selection:text-green-200">
         <ThemeProvider>
           <LinkButton
-            className="sr-only absolute left-0 top-0 focus:not-sr-only"
+            className="sr-only absolute top-0 left-0 focus:not-sr-only"
             href="#main-nav"
             tabIndex={1}
           >
             To Site Navigation
           </LinkButton>
           <LinkButton
-            className="sr-only absolute right-0 top-0 focus:not-sr-only"
+            className="sr-only absolute top-0 right-0 focus:not-sr-only"
             href="#secondary-nav"
             tabIndex={1}
           >

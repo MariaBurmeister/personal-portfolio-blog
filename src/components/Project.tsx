@@ -20,7 +20,7 @@ export const Project: FunctionComponent<Project> = ({
     <Card
       title={name}
       titleHelp={mainLanguage}
-      styleContent="text-purple-400 p-2 rounded rounded-md min-h-[4rem] dark:text-purple-300"
+      styleContent="text-purple-400 p-2 rounded-md min-h-16 dark:text-purple-300"
       footer={<ProjectActions gitHubLink={url} projectName={name} />}
       styleFooter="flex flex-wrap justify-between items-center pr-2 pt-1 md:flex-nowrap"
     >

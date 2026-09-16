@@ -21,7 +21,7 @@ const Error: FunctionComponent<ErrorProps> = ({ error, reset }) => {
       <button
         type="button"
         onClick={() => reset()}
-        className="rounded-full border border-purple-900 bg-purple-100 px-3 py-1 text-sm shadow-sm shadow-green-400 hover:shadow-md dark:border-purple-400 dark:bg-purple-900 dark:text-purple-100 dark:shadow-green-700"
+        className="rounded-full border border-purple-900 bg-purple-100 px-3 py-1 text-sm shadow-xs shadow-green-400 hover:shadow-md dark:border-purple-400 dark:bg-purple-900 dark:text-purple-100 dark:shadow-green-700"
       >
         Try again
       </button>

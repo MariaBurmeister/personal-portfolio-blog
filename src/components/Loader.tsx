@@ -6,7 +6,7 @@ export const Loader: FunctionComponent<{
   return (
     <div
       role="status"
-      className="flex h-full min-h-[12rem] w-full flex-col items-center justify-center gap-5 px-4"
+      className="flex h-full min-h-48 w-full flex-col items-center justify-center gap-5 px-4"
     >
       <span className="relative grid h-16 w-16 place-items-center">
         <svg

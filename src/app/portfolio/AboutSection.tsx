@@ -4,7 +4,7 @@ import { AboutFaceIcon } from "./AboutFaceIcon";
 const CONTACT_EMAIL = "mariaburmeister+work@mariaburmeister.com";
 
 const emailButtonClassName =
-  "text-nowrap border-none bg-gradient-to-b from-purple-200 to-purple-500 px-4 py-1 text-green-100 shadow-lg w-min active:from-purple-500 active:to-purple-200";
+  "text-nowrap border-none bg-linear-to-b from-purple-200 to-purple-500 px-4 py-1 text-green-100 shadow-lg w-min active:from-purple-500 active:to-purple-200";
 
 export function AboutSection() {
   return (

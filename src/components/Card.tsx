@@ -17,14 +17,14 @@ interface Card {
 }
 
 const roundedClasses = {
-  sm: "rounded-sm",
+  sm: "rounded-xs",
   md: "rounded-md",
   lg: "rounded-lg",
   xl: "rounded-xl",
 } as const;
 
 const shadowClasses = {
-  sm: "shadow-sm",
+  sm: "shadow-xs",
   md: "shadow-md",
   lg: "shadow-lg",
   xl: "shadow-xl",
@@ -48,7 +48,7 @@ export const Card: FunctionComponent<Card> = ({
 }) => {
   return (
     <article
-      className={`relative ${rounded ? roundedClasses[rounded] : "rounded"} border border-purple-900 bg-gradient-to-b from-white to-purple-100 p-4 text-purple-900 dark:border-purple-700 dark:from-slate-900 dark:to-purple-950 dark:text-purple-100 ${shadowClasses[shadow]} shadow-purple-200 dark:shadow-purple-950/50 ${className} `}
+      className={`relative ${rounded ? roundedClasses[rounded] : "rounded-sm"} border border-purple-900 bg-linear-to-b from-white to-purple-100 p-4 text-purple-900 dark:border-purple-700 dark:from-slate-900 dark:to-purple-950 dark:text-purple-100 ${shadowClasses[shadow]} shadow-purple-200 dark:shadow-purple-950/50 ${className} `}
     >
       <header
         className={`mb-2 flex max-w-full items-center justify-between gap-x-4 gap-y-2 ${styleHeader}`}

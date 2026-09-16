@@ -25,10 +25,10 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
           sizes="192px"
           priority
           alt="Maria Burmeister"
-          className="mr-auto h-48 w-48 self-center rounded-full object-cover object-right-top ring-2 ring-purple-900 ring-offset-4 md:mx-auto"
+          className="mr-auto h-48 w-48 self-center rounded-full object-cover object-top-right ring-2 ring-purple-900 ring-offset-4 md:mx-auto"
         />
         <hgroup>
-          <h1 className="mt-4 truncate whitespace-pre-line text-wrap text-left font-rubikMono text-xl font-bold text-purple-600 dark:text-purple-300">
+          <h1 className="mt-4 truncate text-left font-rubikMono text-xl font-bold text-wrap whitespace-pre-line text-purple-600 dark:text-purple-300">
             <span className="text-green-200 dark:text-green-300">
               Maria
               <br />
@@ -48,7 +48,7 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
         </p>
         <a
           href={`mailto:${CONTACT_EMAIL}`}
-          className="self-center truncate whitespace-normal leading-tight text-purple-800 underline hover:text-green-600 dark:text-purple-200 dark:hover:text-green-300"
+          className="self-center truncate leading-tight whitespace-normal text-purple-800 underline hover:text-green-600 dark:text-purple-200 dark:hover:text-green-300"
         >
           maria
           <wbr />

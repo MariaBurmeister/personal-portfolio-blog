@@ -13,11 +13,11 @@ const BlogLayout: FunctionComponent<Layout> = ({ children }) => {
       <h1 className="sr-only">Maria Burmeister | Blog</h1>
       <section
         id="main-content"
-        className="rounded-xl bg-white shadow-2xl dark:bg-slate-900 md:col-span-9"
+        className="rounded-xl bg-white shadow-2xl md:col-span-9 dark:bg-slate-900"
       >
         {children}
       </section>
-      <section className="col-span-1 rounded-xl bg-white shadow-2xl dark:bg-slate-900 md:col-span-3" />
+      <section className="col-span-1 rounded-xl bg-white shadow-2xl md:col-span-3 dark:bg-slate-900" />
     </main>
   );
 };

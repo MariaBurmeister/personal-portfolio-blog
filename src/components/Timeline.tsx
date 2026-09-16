@@ -51,7 +51,7 @@ export const Timeline: FunctionComponent<TimelineProps> = ({
       <div
         onScroll={handleScroll}
         ref={container}
-        className="flex min-h-0 min-w-0 flex-1 snap-y snap-mandatory flex-col overflow-y-auto overflow-x-hidden"
+        className="flex min-h-0 min-w-0 flex-1 snap-y snap-mandatory flex-col overflow-x-hidden overflow-y-auto"
       >
         {childrenArray.map((child, index) => (
           <div key={index} className={paneClass}>

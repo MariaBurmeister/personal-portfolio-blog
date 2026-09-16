@@ -33,7 +33,7 @@ export const ExperienceBlock: FunctionComponent<ExperienceBlockProps> = ({
       styleTitle="flex flex-col gap-1 basis-auto"
       title={
         <>
-          <span className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-purple-500 dark:text-purple-300">
+          <span className="text-[0.65rem] font-semibold tracking-[0.16em] text-purple-500 uppercase dark:text-purple-300">
             {title}
             {level ? ` · ${level}` : null}
           </span>
@@ -42,11 +42,11 @@ export const ExperienceBlock: FunctionComponent<ExperienceBlockProps> = ({
       }
       titleHelp={
         <>
-          <span className="text-nowrap rounded-md bg-purple-200 px-2 py-1 text-xs dark:bg-purple-900 dark:text-purple-100">
+          <span className="rounded-md bg-purple-200 px-2 py-1 text-xs text-nowrap dark:bg-purple-900 dark:text-purple-100">
             {startDate}
           </span>
           {" - "}
-          <span className="text-nowrap rounded-md bg-purple-200 px-2 py-1 text-xs dark:bg-purple-900 dark:text-purple-100">
+          <span className="rounded-md bg-purple-200 px-2 py-1 text-xs text-nowrap dark:bg-purple-900 dark:text-purple-100">
             {endDate}
           </span>
         </>
@@ -99,7 +99,7 @@ const ExperienceStack: FunctionComponent<{ stack: Stack }> = ({ stack }) => (
       ) : (
         <span
           key={name}
-          className="text-[0.65rem] font-semibold uppercase tracking-wide text-purple-500 dark:text-purple-300"
+          className="text-[0.65rem] font-semibold tracking-wide text-purple-500 uppercase dark:text-purple-300"
         >
           {name}
           {purpose ? <span className="sr-only">, {purpose}</span> : null}
