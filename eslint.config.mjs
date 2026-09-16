@@ -8,7 +8,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "node_modules/**",
+    ".pnpm-store/**",
     "_wip/**",
+    "README.md",
   ]),
 ]);
 

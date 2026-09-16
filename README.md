@@ -23,7 +23,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ### Environment
 
-Create `.env.local` (never commit this file):
+Copy `.env.example` to `.env.local` (never commit `.env.local`):
 
 ```bash
 GITHUB_USERNAME=your-github-username
