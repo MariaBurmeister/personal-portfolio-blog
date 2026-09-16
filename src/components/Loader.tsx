@@ -1,32 +1,44 @@
 import { FunctionComponent } from "react";
-import "./Loader.scss";
-
-type HorizontalAlign = "center" | "left" | "right";
-type SizeVariant = "sm" | "md" | "lg" | "xl" | "" | "full";
 
 export const Loader: FunctionComponent<{
   loadingText?: string;
-  horizontalAlign?: HorizontalAlign;
-  width?: SizeVariant;
-}> = ({ loadingText, horizontalAlign = "center", width }) => {
+}> = ({ loadingText = "Loading" }) => {
   return (
     <div
-      className={`flex h-full w-full flex-grow flex-col ${horizontalAlign} self-center`}
+      role="status"
+      className="flex h-full min-h-[12rem] w-full flex-col items-center justify-center gap-5 px-4"
     >
-      <span
-        className={`mb-1.5 inline-block h-4 w-full rounded-full border border-purple-700 bg-purple-200 shadow-sm shadow-emerald-400`}
-        style={{
-          backgroundImage:
-            "linear-gradient(45deg,rebeccapurple 25%,transparent 25%,transparent 50%,rebeccapurple 50%,rebeccapurple 75%,transparent 75%,transparent)",
-          backgroundSize: "1em 1em",
-          animation: "barStripe 0.5s linear infinite",
-        }}
-      ></span>
-      {loadingText && (
-        <aside className={`text-${horizontalAlign} text-xs`}>
-          {loadingText}
-        </aside>
-      )}
+      <span className="relative grid h-16 w-16 place-items-center">
+        <svg
+          className="absolute inset-0 motion-safe:animate-spin motion-reduce:animate-none"
+          viewBox="0 0 64 64"
+          fill="none"
+          aria-hidden="true"
+        >
+          <circle
+            cx="32"
+            cy="32"
+            r="26"
+            className="stroke-purple-200 dark:stroke-purple-800"
+            strokeWidth="2.5"
+          />
+          <circle
+            cx="32"
+            cy="32"
+            r="26"
+            className="stroke-purple-600 dark:stroke-green-300"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeDasharray="32 130"
+          />
+        </svg>
+        <span className="font-rubikMono text-sm text-purple-600 dark:text-purple-200">
+          <span className="text-green-200 dark:text-green-300">M</span>B
+        </span>
+      </span>
+      <p className="text-center font-baskervville text-sm tracking-wide text-purple-500 dark:text-purple-300">
+        {loadingText}
+      </p>
     </div>
   );
 };
