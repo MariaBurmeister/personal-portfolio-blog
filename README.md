@@ -28,9 +28,10 @@ Copy `.env.example` to `.env.local` (never commit `.env.local`):
 ```bash
 GITHUB_USERNAME=your-github-username
 GITHUB_TOKEN=your-fine-grained-github-token
+NEXT_PUBLIC_CONTACT_EMAIL=you@example.com
 ```
 
-`GITHUB_TOKEN` is optional for public repos but recommended to avoid rate limits. Use a fine-grained PAT with minimal read access, then set the same values in your Vercel project env.
+`NEXT_PUBLIC_CONTACT_EMAIL` is required (mailto links, error page, and PWA manifest). `GITHUB_TOKEN` is optional for public repos but recommended to avoid rate limits. Use a fine-grained PAT with minimal read access, then set the same values in your Vercel project env.
 
 ### Scripts
 
@@ -47,4 +48,4 @@ The editor formats with Prettier and applies ESLint fixes on save. Vercel runs `
 
 ## Deploy
 
-Designed for [Vercel](https://vercel.com). Push to GitHub and import the repo, or use the Vercel CLI. Ensure `GITHUB_USERNAME` / `GITHUB_TOKEN` are configured for the Projects page, and set the install command to `pnpm install` if it is not detected automatically.
+Designed for [Vercel](https://vercel.com). Push to GitHub and import the repo, or use the Vercel CLI. Ensure `GITHUB_USERNAME` / `GITHUB_TOKEN` / `NEXT_PUBLIC_CONTACT_EMAIL` are configured, and set the install command to `pnpm install` if it is not detected automatically.

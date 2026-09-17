@@ -1,3 +1,4 @@
+export { getContactEmail } from "./getContactEmail";
 export { getData } from "./getData";
 export { getExperiences } from "./getExperience";
 export type {

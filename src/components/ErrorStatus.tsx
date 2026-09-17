@@ -1,4 +1,5 @@
 import { FunctionComponent, ReactNode } from "react";
+import { getContactEmail } from "@/utils/getContactEmail";
 import { LinkButton } from "./LinkButton";
 
 export interface ErrorStatusProps {
@@ -17,6 +18,8 @@ export const ErrorStatus: FunctionComponent<ErrorStatusProps> = ({
   variant = "page",
   actions,
 }) => {
+  const contactEmail = getContactEmail();
+
   const card = (
     <section
       aria-labelledby="error-title"
@@ -45,7 +48,7 @@ export const ErrorStatus: FunctionComponent<ErrorStatusProps> = ({
           Portfolio
         </LinkButton>
         <a
-          href="mailto:mariaburmeister+work@mariaburmeister.com"
+          href={`mailto:${contactEmail}`}
           className="text-sm text-purple-700 underline hover:text-purple-900 dark:text-purple-300 dark:hover:text-purple-100"
         >
           Contact me
