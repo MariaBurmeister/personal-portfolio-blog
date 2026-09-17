@@ -25,7 +25,7 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
           sizes="192px"
           priority
           alt="Maria Burmeister"
-          className="mr-auto h-48 w-48 self-center rounded-full object-cover object-top-right ring-2 ring-purple-900 ring-offset-4 md:mx-auto"
+          className="ms-auto me-auto aspect-square max-w-48 min-w-0 self-center rounded-full object-cover object-top-right ring-2 ring-purple-900 ring-offset-4 xs:mr-auto xs:ml-0 md:ms-auto md:me-auto"
         />
         <hgroup>
           <h1 className="mt-4 truncate text-left font-rubikMono text-xl font-bold text-wrap whitespace-pre-line text-purple-600 dark:text-purple-300">

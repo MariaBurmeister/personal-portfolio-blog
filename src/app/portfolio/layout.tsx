@@ -24,11 +24,11 @@ const PortfolioLayout = ({ children }: { children: ReactNode }) => {
       id="content"
       className="flex flex-wrap items-stretch gap-8 md:flex-nowrap"
     >
-      <BusinessCard className="grow md:max-w-fit md:min-w-fit" />
+      <BusinessCard className="grow md:w-80 md:min-w-80 md:grow-0 md:shrink-0" />
       <section
         // minmax(0, 1fr): Safari treats 1fr as minmax(auto, 1fr), so the row
         // won't shrink and the whole panel becomes the scroller.
-        className="relative grid h-[min(70dvh,36rem)] max-h-[calc(100dvh-8rem)] min-h-[min(28rem,calc(100dvh-8rem))] grow grid-rows-[auto_1fr_auto] overflow-hidden rounded-xl bg-linear-to-b from-white to-purple-100 px-4 shadow-2xl dark:from-slate-900 dark:to-purple-950"
+        className="relative grid h-[min(70dvh,36rem)] max-h-[calc(100dvh-8rem)] min-h-[min(28rem,calc(100dvh-8rem))] min-w-0 grow grid-rows-[auto_1fr_auto] overflow-hidden rounded-xl bg-linear-to-b from-white to-purple-100 px-4 shadow-2xl dark:from-slate-900 dark:to-purple-950"
       >
         <header className="flex flex-col items-stretch gap-4 bg-white pt-4 dark:bg-slate-900">
           <SecondaryNav indexRoute="/portfolio" routes={Routes} />
