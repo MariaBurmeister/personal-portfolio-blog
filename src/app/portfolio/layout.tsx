@@ -24,7 +24,7 @@ const PortfolioLayout = ({ children }: { children: ReactNode }) => {
       id="content"
       className="flex flex-wrap items-stretch gap-8 md:flex-nowrap"
     >
-      <BusinessCard className="grow md:w-80 md:min-w-80 md:grow-0 md:shrink-0" />
+      <BusinessCard className="grow md:w-80 md:min-w-80 md:shrink-0 md:grow-0" />
       <section
         // minmax(0, 1fr): Safari treats 1fr as minmax(auto, 1fr), so the row
         // won't shrink and the whole panel becomes the scroller.
