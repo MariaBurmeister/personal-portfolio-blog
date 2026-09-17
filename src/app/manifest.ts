@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { THEME_COLORS } from "@/theme-colors";
 import { getContactEmail } from "@/utils/getContactEmail";
 
 export default function manifest(): MetadataRoute.Manifest {
@@ -86,7 +87,7 @@ export default function manifest(): MetadataRoute.Manifest {
         purpose: "maskable",
       },
     ],
-    theme_color: "#bbf7d0",
+    theme_color: THEME_COLORS.light,
     background_color: "#a855f7",
     display_override: ["window-controls-overlay", "minimal-ui"],
     display: "standalone",

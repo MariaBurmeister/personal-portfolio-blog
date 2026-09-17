@@ -95,10 +95,12 @@
 
   html {
     color-scheme: light;
+    background-color: #bbf7d0; /* green-200 — iOS overscroll / notch */
   }
 
   html.dark {
     color-scheme: dark;
+    background-color: #020617; /* slate-950 — iOS overscroll / notch */
   }
 
   html,

@@ -7,6 +7,7 @@ import {
 } from "@/components";
 import type { Metadata, Viewport } from "next";
 import { ReactNode } from "react";
+import { THEME_COLORS } from "@/theme-colors";
 import "./globals.css";
 
 const rubikMono = Rubik_Mono_One({
@@ -57,10 +58,10 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  colorScheme: "light dark",
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#bbf7d0" },
-    { media: "(prefers-color-scheme: light)", color: "#bbf7d0" },
-    { color: "#bbf7d0" },
+    { media: "(prefers-color-scheme: light)", color: THEME_COLORS.light },
+    { media: "(prefers-color-scheme: dark)", color: THEME_COLORS.dark },
   ],
 };
 
