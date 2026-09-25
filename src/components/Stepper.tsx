@@ -114,7 +114,7 @@ export const Stepper: FunctionComponent<StepperProps> = ({
       </div>
       {next && (
         <StepControl
-          hidden={isScrollEnd}
+          hidden={!!isScrollEnd}
           onClick={scrollAhead}
           label="scroll to next pane"
         >
