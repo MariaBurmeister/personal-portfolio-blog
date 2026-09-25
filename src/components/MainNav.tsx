@@ -4,10 +4,10 @@ import { usePathname } from "next/navigation";
 import { FunctionComponent } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import { LinkButton } from "./LinkButton";
-
+const isDev = process.env.NODE_ENV === "development";
 const routes = [
   { path: "/portfolio", label: "Portfolio" },
-  // { path: "/blog", label: "Blog" },
+  ...(isDev ? [{ path: "/blog", label: "Blog" }] : []),
 ];
 
 export const MainNav: FunctionComponent = () => {
@@ -77,7 +77,7 @@ const MainNavItem: FunctionComponent<NavItem> = ({
   return (
     <li className="py-2">
       <Link
-        className={`rounded-sm px-2 py-1 hover:bg-purple-100 hover:text-purple-500 dark:hover:bg-purple-900 dark:hover:text-purple-200 ${
+        className={`rounded-sm px-2 py-1 transition-colors hover:bg-purple-100 hover:text-purple-500 dark:hover:bg-purple-900 dark:hover:text-purple-200 ${
           isActive
             ? "bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-200"
             : ""
