@@ -45,7 +45,7 @@ export const SecondaryNav: FunctionComponent<{
                 className={
                   isActive
                     ? "pt-1 font-rubikMono text-lg leading-none text-purple-600 dark:text-purple-200"
-                    : "rounded-md px-2 py-1 hover:bg-green-100 dark:hover:bg-purple-900"
+                    : "rounded-md px-2 py-1 transition-colors hover:bg-green-100 dark:hover:bg-purple-900"
                 }
                 href={`${indexRoute}${path}`}
                 aria-current={isActive ? "page" : undefined}
