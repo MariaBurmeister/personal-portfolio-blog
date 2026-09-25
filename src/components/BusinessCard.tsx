@@ -8,14 +8,18 @@ import {
   BsGithub as GitHub,
   BsLinkedin as LinkedIn,
 } from "react-icons/bs";
+import { Panel } from "./layout/Panel";
 
-export const BusinessCard: FunctionComponent<{ className: string }> = ({
-  className,
-}) => {
+export const BusinessCard: FunctionComponent = () => {
   const contactEmail = getContactEmail();
+
+  const businessCardStyles =
+    "grid grid-cols-1 grid-rows-[1fr_auto_auto] gap-4 p-6 inset-shadow-business-card dark:inset-shadow-business-card-dark";
   return (
-    <section
-      className={`relative grid grid-cols-1 grid-rows-[1fr_auto_auto] gap-4 rounded-xl bg-white p-6 shadow-2xl ring-2 ring-white ring-offset-4 ring-offset-slate-300 dark:bg-slate-900 dark:ring-slate-700 dark:ring-offset-slate-950 ${className} `}
+    <Panel
+      as="section"
+      variant="inline-start"
+      className={`${businessCardStyles}`}
     >
       <header className="grid grid-rows-[1fr_auto_auto_auto]">
         <Image
@@ -42,7 +46,7 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
         </hgroup>
       </header>
 
-      <section className="-mx-6 my-auto bg-purple-200 p-4 text-center shadow-inner shadow-purple-300 dark:bg-purple-950 dark:shadow-purple-900">
+      <section className="-mx-5 my-auto bg-purple-200 p-4 text-center shadow-inner shadow-purple-300 dark:bg-purple-950 dark:shadow-purple-900">
         <p className="mb-2 self-center text-center align-middle leading-tight text-purple-800 dark:text-purple-200">
           <Location className="inline align-baseline text-xs" /> Hamburg - De
         </p>
@@ -75,6 +79,6 @@ export const BusinessCard: FunctionComponent<{ className: string }> = ({
           <span className="sr-only">LinkedIn</span>
         </a>
       </section>
-    </section>
+    </Panel>
   );
 };

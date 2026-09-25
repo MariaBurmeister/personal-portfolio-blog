@@ -68,7 +68,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${rubikMono.variable} ${baskervville.variable}`}
     >
       <ViewTransition>
-        <body className="page-change relative flex min-h-dvh flex-col gap-8 bg-linear-to-b from-green-200 to-purple-500 p-6 accent-purple-500 selection:bg-green-200 selection:text-purple-600 md:justify-center md:bg-linear-to-r md:px-16 lg:px-36 dark:from-slate-950 dark:to-purple-950 dark:selection:bg-purple-600 dark:selection:text-green-200">
+        <body className="page-change relative flex min-h-dvh flex-col gap-8 p-6 accent-purple-500 [--bg-gradient-direction:var(--bg-gradient-direction-initial)] selection:bg-green-200 selection:text-purple-600 md:justify-center md:px-16 md:[--bg-gradient-direction:var(--bg-gradient-direction-md)] lg:px-36 dark:selection:bg-purple-600 dark:selection:text-green-200">
           <ThemeProvider>
             <LinkButton
               className="sr-only absolute top-0 left-0 focus:not-sr-only"

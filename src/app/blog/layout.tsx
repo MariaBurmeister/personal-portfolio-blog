@@ -1,3 +1,5 @@
+import { PageLayout } from "@/components/layout/PageLayout";
+import { Panel } from "@/components/layout/Panel";
 import { FunctionComponent, ReactNode } from "react";
 
 interface Layout {
@@ -6,19 +8,17 @@ interface Layout {
 
 const BlogLayout: FunctionComponent<Layout> = ({ children }) => {
   return (
-    <main
-      id="content"
-      className="row-span-5 grid h-[26.8rem] grid-cols-1 items-stretch justify-center gap-8 rounded-xl md:col-span-12 md:row-start-1 md:grid-cols-12"
-    >
+    <PageLayout variant="content-side">
       <h1 className="sr-only">Maria Burmeister | Blog</h1>
-      <section
-        id="main-content"
-        className="rounded-xl bg-white shadow-2xl md:col-span-9 dark:bg-slate-900"
-      >
+      <Panel as="section" id="main-content" variant="inline-start">
         {children}
-      </section>
-      <section className="col-span-1 rounded-xl bg-white shadow-2xl md:col-span-3 dark:bg-slate-900" />
-    </main>
+      </Panel>
+      <Panel as="nav" variant="inline-end" aria-label="Blog navigation">
+        <ul>
+          <li>Writing</li>
+        </ul>
+      </Panel>
+    </PageLayout>
   );
 };
 

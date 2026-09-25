@@ -1,13 +1,12 @@
+import { PageLayout } from "@/components/layout/PageLayout";
 import Link from "next/link";
 
 const Home = () => {
   return (
-    <main
-      id="content"
-      className="my-auto flex flex-col items-center gap-6 self-center md:my-0"
-    >
+    <PageLayout variant="content">
       <h1 className="sr-only">Maria Burmeister | Frontend Developer</h1>
       <Link
+        id="home-logo"
         href="/portfolio"
         aria-label="Go to portfolio"
         title="Go to portfolio"
@@ -18,7 +17,7 @@ const Home = () => {
         </span>
         B<span className="sr-only">Maria Burmeister - Frontend Developer</span>
       </Link>
-    </main>
+    </PageLayout>
   );
 };
 
