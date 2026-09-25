@@ -57,17 +57,17 @@ export const ExperienceBlock: FunctionComponent<ExperienceBlockProps> = ({
       footer={<ExperienceStack stack={stack} />}
       styleFooter="flex flex-wrap items-center gap-3 pr-2 pt-1"
     >
-      <article className="flex flex-col gap-2 overflow-hidden px-2 pt-2 font-baskervville">
-        {description.map((desc, i) =>
+      <article className="flex h-min flex-col gap-2 overflow-hidden px-2 pt-2 font-baskervville">
+        {description.map((descriptionPart, i) =>
           i === 0 ? (
             <p
               className={expanded ? "line-clamp-none" : "line-clamp-2"}
               key={title + i}
             >
-              {desc}
+              {descriptionPart}
             </p>
           ) : (
-            expanded && <p key={title + i}>{desc}</p>
+            expanded && <p key={title + i}>{descriptionPart}</p>
           ),
         )}
       </article>
